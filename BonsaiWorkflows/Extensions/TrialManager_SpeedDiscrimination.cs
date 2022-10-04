@@ -33,14 +33,14 @@ public class TrialManager_SpeedDiscrimination
     public float minPRight {get; set; }
     
     
-    public IObservable<Tuple<double, double>> Process(IObservable<Unit> source)
+    public IObservable<Tuple<Tuple<double, double>,Tuple<int, int, int, int>>> Process(IObservable<Unit> source)
     {
         return source.Select(value => 
         {
 
         ////////// INTIALISE VARIABLES //////////
 
-            Random rng = new Random((int)DateTime.Now.Ticks); // random number generator
+            var rng = new Random((int)DateTime.Now.Ticks); // random number generator
             float bias = 0f;
             float totalNorm = 0f;
             float pRight;
@@ -56,7 +56,6 @@ public class TrialManager_SpeedDiscrimination
 
 
             //////////// PICK STANDARD SPEED TO TEST //////////
-
             int randomStandardSpeed = rng.Next(101); // random number between 1 and 100
             for (int i=0; i<nSpeeds; i++) // loop through standard speeds 
             {
@@ -70,9 +69,7 @@ public class TrialManager_SpeedDiscrimination
                 }
             }
 
-
             ////////// PICK A SPEED DIFFERENCE TO TEST //////////
-
             int randomSpeedDiff = rng.Next(101); // random number between 1 and 100
             for (int i=0; i<nSpeedDiffs; i++) // loop through ratios until one is picked
             {
@@ -84,19 +81,14 @@ public class TrialManager_SpeedDiscrimination
                     break;
                 }
             }
-
             jndSpeed = standardSpeed + (speedDiff * standardSpeed);
 
-            
 
             ////////// PICK WHETHER LEFT OR RIGHT SPEED IS FASTER /////////
-
             pRight = pRightManual; // assign manual by default, override if using autobias
-            
             if (autoBias) // optional bias correction
-            {
-
-                // calculate bias for this standard speed by looping through difference speed difference results
+            // calculate bias for this standard speed by looping through difference speed difference results
+            { 
             for (int i=0; i<nSpeedDiffs; i++)
             {   // here 1st [] indexes into perf track list for the mean speed, [speedDifferenceIndex] is speed diff index, [0:3] are the int array indexes
                 float nr = PerfTrackList[standardSpeedIndex][speedDifferenceIndex][0] + 1; // # right trials
@@ -106,7 +98,7 @@ public class TrialManager_SpeedDiscrimination
 
                 // this speed difference contribution to bias is diff in proportion correct, weighted by speed difference, weighted by total trials for this difference.
                 bias = bias + (((float)(cr/nr) - (float)(cl/nl)) * SpeedDifferenceList[standardSpeedIndex][speedDifferenceIndex] * (nl+nr));
-                totalNorm = totalNorm + (nl+nr)*SpeedDifferenceList[standardSpeedIndex][speedDifferenceIndex]; // normalisation factor
+                totalNorm = totalNorm + (nl+nr)*SpeedDifferenceList[standardSpeedIndex][speedDifferenceIndex]; // normalisation factor depends on how big speed difference is.
             }
             bias = bias / totalNorm; // bias is normalised to be between 0 and 1
             pRight = 0.5f - (bias*biasScaling); // alter p(right) using calculated bias
@@ -114,22 +106,14 @@ public class TrialManager_SpeedDiscrimination
             if (pRight < minPRight) { pRight = minPRight; }
             if (pRight > 1-minPRight) { pRight = 1-minPRight;}
             } //  end autobias
-            if (Single.IsNaN(pRight)) // if first trials/error, revert to manual setting
-            {
-                pRight = pRightManual;
-            }
+
+            // if first trials/error, revert to manual setting
+            if (Single.IsNaN(pRight)) {pRight = pRightManual;}
             
             // now use random number to choose whether left or right is faster
             float biasrnd = (float)rng.NextDouble(); // random number for left / right faster
-            // check if too many fastest on left or right side in a row
-            if (rightInARow.All(x => x == 1)) // if list is all right
-            {
-                biasrnd = 1; // next trial must be left
-            }
-            if (rightInARow.All(x => x == -1))
-            {
-                biasrnd = 0; // next trial must be right
-            }
+            if (rightInARow.All(x => x == 1)) {biasrnd = 1;} // if list is all rights, next trial must be left
+            if (rightInARow.All(x => x == -1)){biasrnd = 0;} // if list is all lefts, next trial must be righy
             
             if (biasrnd <= pRight) // compare to pre-calculated pRight value (probability of right faster)
             {
@@ -137,7 +121,7 @@ public class TrialManager_SpeedDiscrimination
             if (jndSpeed > standardSpeed) {speeds = new Tuple<double,double>(standardSpeed, jndSpeed);}
             else {speeds = new Tuple<double,double>(jndSpeed, standardSpeed);}
             }
-            else
+            else // if biasrnd>pRight
             {
             rightFaster = -1; // left is faster
             if (jndSpeed > standardSpeed) {speeds = new Tuple<double,double>(jndSpeed, standardSpeed);}
@@ -146,12 +130,13 @@ public class TrialManager_SpeedDiscrimination
 
             // add right faster, remove first element from list if needed
             rightInARow.Add(rightFaster);
-            if (rightInARow.Count > maxInARow)
-            { 
-                rightInARow.RemoveAt(0); 
-            }
+            if (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
 
-            return speeds;
+            ///////////////////// GENERATE OUTPUTS ////////////////
+            var otherInfo = new Tuple<int, int, int, int>(standardSpeedIndex, speedDifferenceIndex, rightFaster, nSpeedDiffs);
+            var output = Tuple.Create(speeds, otherInfo);
+
+            return output;
     });
     }
 }
