@@ -45,19 +45,19 @@
               <ScaleZ>100</ScaleZ>
               <MeshName>cube3d</MeshName>
               <Ambient>
-                <X>1</X>
-                <Y>1</Y>
-                <Z>1</Z>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
               </Ambient>
               <Diffuse>
-                <X>1</X>
-                <Y>1</Y>
-                <Z>1</Z>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
               </Diffuse>
               <Specular>
-                <X>1</X>
-                <Y>1</Y>
-                <Z>1</Z>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
               </Specular>
               <SpecularExponent>0</SpecularExponent>
               <RotationZ>0</RotationZ>
@@ -543,36 +543,8 @@ Item4.Item2 as transXR)</scr:Expression>
                       <p1:PerfTrackList>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
                             <p1:int>0</p1:int>
                             <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
                             <p1:int>0</p1:int>
                             <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
@@ -591,8 +563,36 @@ Item4.Item2 as transXR)</scr:Expression>
                             <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                             <p1:int>0</p1:int>
                             <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
@@ -602,7 +602,7 @@ Item4.Item2 as transXR)</scr:Expression>
                         <p1:int>1</p1:int>
                         <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>5</p1:maxInARow>
@@ -736,7 +736,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>380</Value>
+                                        <Value>760</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -763,7 +763,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>200</Value>
+                                        <Value>400</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -941,7 +941,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-6.33333349</Value>
+                                                    <Value>-12.666667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1174,7 +1174,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-6.33333349</p1:VelocityX>
+                                                    <p1:VelocityX>-12.666667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1357,7 +1357,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-6.33333349</Value>
+                                                    <Value>-12.666667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1581,7 +1581,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-6.33333349</p1:VelocityX>
+                                                    <p1:VelocityX>-12.666667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1765,7 +1765,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-6.33333349</Value>
+                                                    <Value>-12.666667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1989,7 +1989,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-6.33333349</p1:VelocityX>
+                                                    <p1:VelocityX>-12.666667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2162,7 +2162,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-6.33333349</Value>
+                                                    <Value>-12.666667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2395,7 +2395,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-6.33333349</p1:VelocityX>
+                                                    <p1:VelocityX>-12.666667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2704,7 +2704,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-3.33333325</Value>
+                                                    <Value>-6.66666651</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2937,7 +2937,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-3.33333325</p1:VelocityX>
+                                                    <p1:VelocityX>-6.66666651</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3120,7 +3120,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-3.33333325</Value>
+                                                    <Value>-6.66666651</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3344,7 +3344,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-3.33333325</p1:VelocityX>
+                                                    <p1:VelocityX>-6.66666651</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3528,7 +3528,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-3.33333325</Value>
+                                                    <Value>-6.66666651</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3752,7 +3752,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-3.33333325</p1:VelocityX>
+                                                    <p1:VelocityX>-6.66666651</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3925,7 +3925,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-3.33333325</Value>
+                                                    <Value>-6.66666651</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4158,7 +4158,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-3.33333325</p1:VelocityX>
+                                                    <p1:VelocityX>-6.66666651</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -5109,36 +5109,8 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <p1:perfTracking>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
                                                     <p1:int>0</p1:int>
                                                     <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
                                                     <p1:int>0</p1:int>
                                                     <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
@@ -5157,8 +5129,36 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                     <p1:int>0</p1:int>
                                                     <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
@@ -6164,7 +6164,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="gl:Delay">
-                <gl:DueTime>PT0S</gl:DueTime>
+                <gl:DueTime>PT10S</gl:DueTime>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -6547,11 +6547,6 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="IntProperty">
-                <Value>0</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="IntProperty">
                 <Value>20</Value>
               </Combinator>
             </Expression>
@@ -6564,6 +6559,11 @@ Item4.Item2 as transXR)</scr:Expression>
               <PropertyMappings>
                 <Property Name="Count" />
               </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="IntProperty">
+                <Value>0</Value>
+              </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
@@ -6581,97 +6581,78 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>TrialResults</Name>
             </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="pEngagedThreshold" />
+            </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:TrackTaskEngagement_SpeedDiscrimination">
                 <p1:trialResponses>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>2</p1:int>
-                  <p1:int>2</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>2</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
-                  <p1:int>3</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
+                  <p1:int>0</p1:int>
                 </p1:trialResponses>
                 <p1:maxListLength>20</p1:maxListLength>
+                <p1:pEngagedThreshold>0.8</p1:pEngagedThreshold>
               </Combinator>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="ExternalizedMapping">
-                <Property Name="Value" DisplayName="EngThresh" />
-              </Builder>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item1</Selector>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Condition">
-                <Workflow>
-                  <Nodes>
-                    <Expression xsi:type="WorkflowInput">
-                      <Name>Source1</Name>
-                    </Expression>
-                    <Expression xsi:type="ExternalizedMapping">
-                      <Property Name="Value" />
-                    </Expression>
-                    <Expression xsi:type="GreaterThanOrEqual">
-                      <Operand xsi:type="DoubleProperty">
-                        <Value>0.95</Value>
-                      </Operand>
-                    </Expression>
-                    <Expression xsi:type="WorkflowOutput" />
-                  </Nodes>
-                  <Edges>
-                    <Edge From="0" To="2" Label="Source1" />
-                    <Edge From="1" To="2" Label="Source2" />
-                    <Edge From="2" To="3" Label="Source1" />
-                  </Edges>
-                </Workflow>
-              </Builder>
+            <Expression xsi:type="Condition">
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                </Edges>
+              </Workflow>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="BehaviorSubject">
-                <Name>TriggerEngage</Name>
-              </Builder>
+            <Expression xsi:type="MulticastSubject">
+              <Name>DoTimeout</Name>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="SubscribeSubject">
-                <Name>EmptyEngList</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="PropertyMapping">
-                <PropertyMappings>
-                  <Property Name="trialResponses" />
-                </PropertyMappings>
-              </Builder>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item2</Selector>
             </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
             <Edge From="0" To="2" Label="Source1" />
-            <Edge From="0" To="3" Label="Source1" />
-            <Edge From="2" To="6" Label="Source1" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="3" To="5" Label="Source1" />
-            <Edge From="4" To="10" Label="Source3" />
-            <Edge From="5" To="6" Label="Source2" />
+            <Edge From="0" To="5" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="2" To="4" Label="Source1" />
+            <Edge From="3" To="11" Label="Source3" />
+            <Edge From="4" To="6" Label="Source2" />
+            <Edge From="5" To="6" Label="Source1" />
             <Edge From="6" To="7" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
-            <Edge From="8" To="10" Label="Source2" />
-            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="8" To="11" Label="Source2" />
+            <Edge From="9" To="11" Label="Source1" />
+            <Edge From="10" To="11" Label="Source4" />
             <Edge From="11" To="12" Label="Source1" />
+            <Edge From="11" To="15" Label="Source1" />
             <Edge From="12" To="13" Label="Source1" />
-            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>

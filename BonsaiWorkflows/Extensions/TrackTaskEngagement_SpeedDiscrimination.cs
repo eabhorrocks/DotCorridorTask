@@ -12,7 +12,8 @@ public class TrackTaskEngagement_SpeedDiscrimination
 {
     public List<int> trialResponses { get; set;} // list of trial responses
     public int maxListLength {get; set; } // 
-    public IObservable<double> Process(IObservable<int> source)
+    public double pEngagedThreshold {get; set; }
+    public IObservable<Tuple<bool, double>> Process(IObservable<int> source)
     {
         return source.Select(value => 
         {
@@ -25,9 +26,20 @@ public class TrackTaskEngagement_SpeedDiscrimination
             int count = trialResponses.Count(x => x == 3);
             //Console.WriteLine(count);
 
+            // calculate fraction of trials the mouse has responded to
             double pEngaged = (double)1 - ((double)count/(double)maxListLength);
 
-            return pEngaged;
+            // if below the threshold, set output to true and reset the list, otherwise set output as false
+            var engagedbool = false;
+            if (pEngaged <= pEngagedThreshold) 
+            {
+                engagedbool = true;
+                trialResponses = new List<int>(Enumerable.Repeat(0, maxListLength));
+            }
+
+            var output = Tuple.Create(engagedbool, pEngaged);
+
+            return output;
         });
     }
 }
