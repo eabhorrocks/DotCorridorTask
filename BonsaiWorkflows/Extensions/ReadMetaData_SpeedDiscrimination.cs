@@ -34,6 +34,12 @@ public class ReadMetaData_SpeedDiscrimination
             // Standard Speeds Probability List
             StandardSpeedsProbList.AddRange(value[1]);
             StandardSpeedsProbList.RemoveAt(0);
+            // normalise so probs sum to 100
+            float normfactor = StandardSpeedsProbList.Sum() / 100f;
+            StandardSpeedsProbList = StandardSpeedsProbList.Select(x => x / normfactor).ToList();
+
+            //StandardSpeedsProbList = StandardSpeedsProbList.Select
+
 
             // Speed Differences List
             int nSpeedDifferences = value.Count()-2; // first 2 rows have junk data due to structure of csv
@@ -57,9 +63,13 @@ public class ReadMetaData_SpeedDiscrimination
                 {
                     tempList.Add(value[i][ispeed+1]);
                 }
+                // normalise so probs sum to 100
+                float normfactorsd = tempList.Sum() / 100f;
+                tempList = tempList.Select(x => x / normfactorsd).ToList();
 
                 SpeedDifferencesProbList.Add(tempList);
             }
+
 
             // Performance Tracking  List
             int[] intArr = {0, 0, 0, 0};
@@ -81,8 +91,7 @@ public class ReadMetaData_SpeedDiscrimination
             
             return output;
 
-            
-
+        
         });
     }
 }
