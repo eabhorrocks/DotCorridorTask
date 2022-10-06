@@ -53,6 +53,7 @@ public class TrialManager_SpeedDiscrimination
             float jndSpeed = 0f;
             int rightFaster = 1;
             Tuple<double,double> speeds;
+            
 
 
             //////////// PICK STANDARD SPEED TO TEST //////////
