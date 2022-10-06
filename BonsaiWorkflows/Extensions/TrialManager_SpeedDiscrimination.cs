@@ -55,7 +55,6 @@ public class TrialManager_SpeedDiscrimination
             Tuple<double,double> speeds;
             
 
-
             //////////// PICK STANDARD SPEED TO TEST //////////
             int randomStandardSpeed = rng.Next(101); // random number between 1 and 100
             for (int i=0; i<nSpeeds; i++) // loop through standard speeds 
@@ -70,6 +69,7 @@ public class TrialManager_SpeedDiscrimination
                 }
             }
 
+
             ////////// PICK A SPEED DIFFERENCE TO TEST //////////
             int randomSpeedDiff = rng.Next(101); // random number between 1 and 100
             for (int i=0; i<nSpeedDiffs; i++) // loop through ratios until one is picked
@@ -82,7 +82,8 @@ public class TrialManager_SpeedDiscrimination
                     break;
                 }
             }
-            jndSpeed = standardSpeed + (speedDiff * standardSpeed);
+            //jndSpeed = standardSpeed + (speedDiff * standardSpeed);
+            jndSpeed = standardSpeed * speedDiff;
 
 
             ////////// PICK WHETHER LEFT OR RIGHT SPEED IS FASTER /////////
@@ -132,6 +133,9 @@ public class TrialManager_SpeedDiscrimination
             // add right faster, remove first element from list if needed
             rightInARow.Add(rightFaster);
             if (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
+
+            Console.WriteLine("StandardSpeed=" + standardSpeed + ", SpeedDiff=" + speedDiff + ", rightFaster?" + rightFaster);
+
 
             ///////////////////// GENERATE OUTPUTS ////////////////
             var otherInfo = new Tuple<int, int, int, int>(standardSpeedIndex, speedDifferenceIndex, rightFaster, nSpeedDiffs);

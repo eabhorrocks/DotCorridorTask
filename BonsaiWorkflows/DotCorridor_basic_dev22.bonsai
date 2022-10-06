@@ -493,12 +493,14 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="p1:TrialManager_SpeedDiscrimination">
                       <p1:StandardSpeedsList>
-                        <p1:float>100</p1:float>
-                        <p1:float>200</p1:float>
-                        <p1:float>300</p1:float>
-                        <p1:float>400</p1:float>
+                        <p1:float>16</p1:float>
+                        <p1:float>32</p1:float>
+                        <p1:float>64</p1:float>
+                        <p1:float>128</p1:float>
+                        <p1:float>256</p1:float>
                       </p1:StandardSpeedsList>
                       <p1:StandardSpeedsProbList>
+                        <p1:float>25</p1:float>
                         <p1:float>25</p1:float>
                         <p1:float>25</p1:float>
                         <p1:float>25</p1:float>
@@ -506,104 +508,206 @@ Item4.Item2 as transXR)</scr:Expression>
                       </p1:StandardSpeedsProbList>
                       <p1:SpeedDifferenceList>
                         <p1:ArrayOfFloat>
-                          <p1:float>-0.9</p1:float>
-                          <p1:float>0.9</p1:float>
+                          <p1:float>4</p1:float>
+                          <p1:float>2</p1:float>
+                          <p1:float>0.5</p1:float>
+                          <p1:float>0.25</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>-0.9</p1:float>
-                          <p1:float>0.9</p1:float>
+                          <p1:float>4</p1:float>
+                          <p1:float>2</p1:float>
+                          <p1:float>0.5</p1:float>
+                          <p1:float>0.25</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>-0.9</p1:float>
-                          <p1:float>0.9</p1:float>
+                          <p1:float>4</p1:float>
+                          <p1:float>2</p1:float>
+                          <p1:float>0.5</p1:float>
+                          <p1:float>0.25</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>-0.9</p1:float>
-                          <p1:float>0.9</p1:float>
+                          <p1:float>4</p1:float>
+                          <p1:float>2</p1:float>
+                          <p1:float>0.5</p1:float>
+                          <p1:float>0.25</p1:float>
+                        </p1:ArrayOfFloat>
+                        <p1:ArrayOfFloat>
+                          <p1:float>4</p1:float>
+                          <p1:float>2</p1:float>
+                          <p1:float>0.5</p1:float>
+                          <p1:float>0.25</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceList>
                       <p1:SpeedDifferenceProbList>
                         <p1:ArrayOfFloat>
-                          <p1:float>50</p1:float>
-                          <p1:float>50</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
                           <p1:float>50</p1:float>
                           <p1:float>50</p1:float>
+                          <p1:float>0</p1:float>
+                          <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
+                          <p1:float>0</p1:float>
                           <p1:float>50</p1:float>
+                          <p1:float>50</p1:float>
+                          <p1:float>0</p1:float>
+                        </p1:ArrayOfFloat>
+                        <p1:ArrayOfFloat>
+                          <p1:float>0</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
                           <p1:float>50</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
+                          <p1:float>0</p1:float>
                           <p1:float>50</p1:float>
                           <p1:float>50</p1:float>
+                          <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceProbList>
                       <p1:PerfTrackList>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>1</p1:int>
-                            <p1:int>1</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>4</p1:int>
+                            <p1:int>4</p1:int>
+                            <p1:int>5</p1:int>
+                            <p1:int>5</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                       </p1:PerfTrackList>
                       <p1:rightInARow>
+                        <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
-                        <p1:int>1</p1:int>
-                        <p1:int>1</p1:int>
-                        <p1:int>1</p1:int>
-                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>5</p1:maxInARow>
                       <p1:autoBias>false</p1:autoBias>
@@ -736,7 +840,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>30</Value>
+                                        <Value>128</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -763,7 +867,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>300</Value>
+                                        <Value>64</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -941,7 +1045,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.5</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1174,7 +1278,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.5</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1357,7 +1461,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.5</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1581,7 +1685,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.5</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1765,7 +1869,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.5</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1989,7 +2093,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.5</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2162,7 +2266,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.5</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2395,7 +2499,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.5</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2704,7 +2808,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-5</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2937,7 +3041,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-5</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3120,7 +3224,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-5</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3344,7 +3448,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-5</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3528,7 +3632,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-5</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3752,7 +3856,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-5</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3925,7 +4029,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-5</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4158,7 +4262,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-5</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -5109,58 +5213,132 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <p1:perfTracking>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>1</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>4</p1:int>
+                                                    <p1:int>5</p1:int>
+                                                    <p1:int>5</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                               </p1:perfTracking>
@@ -6224,326 +6402,328 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="WorkflowInput">
               <Name>Source1</Name>
             </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>Initialise Performance Tracking</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="SpeedDifferences" DisplayName="SpeedDifferences4" />
-                    <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs4" />
-                    <Property Name="StandardSpeed" DisplayName="StandardSpeed4" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
-                      <p1:StandardSpeed>400</p1:StandardSpeed>
-                      <p1:SpeedDifferences>
-                        <p1:float>-0.9</p1:float>
-                        <p1:float>0.9</p1:float>
-                      </p1:SpeedDifferences>
-                      <p1:SpeedDifferenceProbs>
-                        <p1:float>50</p1:float>
-                        <p1:float>50</p1:float>
-                      </p1:SpeedDifferenceProbs>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item1</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferenes4</Name>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="SpeedDifferences" DisplayName="SpeedDifferences3" />
-                    <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs3" />
-                    <Property Name="StandardSpeed" DisplayName="StandardSpeed3" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
-                      <p1:StandardSpeed>300</p1:StandardSpeed>
-                      <p1:SpeedDifferences>
-                        <p1:float>-0.9</p1:float>
-                        <p1:float>0.9</p1:float>
-                      </p1:SpeedDifferences>
-                      <p1:SpeedDifferenceProbs>
-                        <p1:float>50</p1:float>
-                        <p1:float>50</p1:float>
-                      </p1:SpeedDifferenceProbs>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item1</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferenes3</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item2</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDiffereneProbs3</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item3</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>PerfTrack3</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item4</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeed3</Name>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="SpeedDifferences" DisplayName="SpeedDifferences2" />
-                    <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs2" />
-                    <Property Name="StandardSpeed" DisplayName="StandardSpeed2" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
-                      <p1:StandardSpeed>200</p1:StandardSpeed>
-                      <p1:SpeedDifferences>
-                        <p1:float>-0.9</p1:float>
-                        <p1:float>0.9</p1:float>
-                      </p1:SpeedDifferences>
-                      <p1:SpeedDifferenceProbs>
-                        <p1:float>50</p1:float>
-                        <p1:float>50</p1:float>
-                      </p1:SpeedDifferenceProbs>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item1</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferenes2</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item2</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDiffereneProbs2</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item3</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>PerfTrack2</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item4</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeed2</Name>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="SpeedDifferences" DisplayName="SpeedDifferences1" />
-                    <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs1" />
-                    <Property Name="StandardSpeed" DisplayName="StandardSpeed1" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
-                      <p1:StandardSpeed>100</p1:StandardSpeed>
-                      <p1:SpeedDifferences>
-                        <p1:float>-0.9</p1:float>
-                        <p1:float>0.9</p1:float>
-                      </p1:SpeedDifferences>
-                      <p1:SpeedDifferenceProbs>
-                        <p1:float>50</p1:float>
-                        <p1:float>50</p1:float>
-                      </p1:SpeedDifferenceProbs>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item1</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferenes1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:ToList" />
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferencesList</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item2</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDiffereneProbs4</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item2</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDiffereneProbs1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:ToList" />
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>SpeedDifferenceProbList</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item3</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>PerfTrack4</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item3</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>PerfTrack1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:ToList" />
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>PerfTrackList</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item4</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeed4</Name>
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item4</Selector>
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeed1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:ToList" />
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeedsList</Name>
-                  </Expression>
-                  <Expression xsi:type="WorkflowInput">
-                    <Name>Source1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="FloatProperty">
-                      <Value>25</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="FloatProperty">
-                      <Value>25</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="FloatProperty">
-                      <Value>25</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="FloatProperty">
-                      <Value>25</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Merge" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Take">
-                      <rx:Count>4</rx:Count>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:ToList" />
-                  </Expression>
-                  <Expression xsi:type="BehaviorSubject">
-                    <Name>StandardSpeedsProbsList</Name>
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                  <Edge From="1" To="31" Label="Source1" />
-                  <Edge From="1" To="38" Label="Source1" />
-                  <Edge From="1" To="45" Label="Source1" />
-                  <Edge From="2" To="3" Label="Source1" />
-                  <Edge From="3" To="28" Label="Source4" />
-                  <Edge From="4" To="5" Label="Source1" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="5" To="8" Label="Source1" />
-                  <Edge From="5" To="10" Label="Source1" />
-                  <Edge From="5" To="12" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="28" Label="Source3" />
-                  <Edge From="8" To="9" Label="Source1" />
-                  <Edge From="9" To="35" Label="Source3" />
-                  <Edge From="10" To="11" Label="Source1" />
-                  <Edge From="11" To="42" Label="Source3" />
-                  <Edge From="12" To="13" Label="Source1" />
-                  <Edge From="13" To="49" Label="Source3" />
-                  <Edge From="14" To="15" Label="Source1" />
-                  <Edge From="15" To="16" Label="Source1" />
-                  <Edge From="15" To="18" Label="Source1" />
-                  <Edge From="15" To="20" Label="Source1" />
-                  <Edge From="15" To="22" Label="Source1" />
-                  <Edge From="16" To="17" Label="Source1" />
-                  <Edge From="17" To="28" Label="Source2" />
-                  <Edge From="18" To="19" Label="Source1" />
-                  <Edge From="19" To="35" Label="Source2" />
-                  <Edge From="20" To="21" Label="Source1" />
-                  <Edge From="21" To="42" Label="Source2" />
-                  <Edge From="22" To="23" Label="Source1" />
-                  <Edge From="23" To="49" Label="Source2" />
-                  <Edge From="24" To="25" Label="Source1" />
-                  <Edge From="25" To="26" Label="Source1" />
-                  <Edge From="25" To="33" Label="Source1" />
-                  <Edge From="25" To="40" Label="Source1" />
-                  <Edge From="25" To="47" Label="Source1" />
-                  <Edge From="26" To="27" Label="Source1" />
-                  <Edge From="27" To="28" Label="Source1" />
-                  <Edge From="28" To="29" Label="Source1" />
-                  <Edge From="29" To="30" Label="Source1" />
-                  <Edge From="31" To="32" Label="Source1" />
-                  <Edge From="32" To="35" Label="Source4" />
-                  <Edge From="33" To="34" Label="Source1" />
-                  <Edge From="34" To="35" Label="Source1" />
-                  <Edge From="35" To="36" Label="Source1" />
-                  <Edge From="36" To="37" Label="Source1" />
-                  <Edge From="38" To="39" Label="Source1" />
-                  <Edge From="39" To="42" Label="Source4" />
-                  <Edge From="40" To="41" Label="Source1" />
-                  <Edge From="41" To="42" Label="Source1" />
-                  <Edge From="42" To="43" Label="Source1" />
-                  <Edge From="43" To="44" Label="Source1" />
-                  <Edge From="45" To="46" Label="Source1" />
-                  <Edge From="46" To="49" Label="Source4" />
-                  <Edge From="47" To="48" Label="Source1" />
-                  <Edge From="48" To="49" Label="Source1" />
-                  <Edge From="49" To="50" Label="Source1" />
-                  <Edge From="50" To="51" Label="Source1" />
-                  <Edge From="52" To="53" Label="Source1" />
-                  <Edge From="52" To="54" Label="Source1" />
-                  <Edge From="52" To="55" Label="Source1" />
-                  <Edge From="52" To="56" Label="Source1" />
-                  <Edge From="53" To="57" Label="Source1" />
-                  <Edge From="54" To="57" Label="Source2" />
-                  <Edge From="55" To="57" Label="Source3" />
-                  <Edge From="56" To="57" Label="Source4" />
-                  <Edge From="57" To="58" Label="Source1" />
-                  <Edge From="58" To="59" Label="Source1" />
-                  <Edge From="59" To="60" Label="Source1" />
-                </Edges>
-              </Workflow>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="GroupWorkflow">
+                <Name>Initialise Performance Tracking</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="SpeedDifferences" DisplayName="SpeedDifferences4" />
+                      <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs4" />
+                      <Property Name="StandardSpeed" DisplayName="StandardSpeed4" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
+                        <p1:StandardSpeed>400</p1:StandardSpeed>
+                        <p1:SpeedDifferences>
+                          <p1:float>-0.9</p1:float>
+                          <p1:float>0.9</p1:float>
+                        </p1:SpeedDifferences>
+                        <p1:SpeedDifferenceProbs>
+                          <p1:float>50</p1:float>
+                          <p1:float>50</p1:float>
+                        </p1:SpeedDifferenceProbs>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferenes4</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="SpeedDifferences" DisplayName="SpeedDifferences3" />
+                      <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs3" />
+                      <Property Name="StandardSpeed" DisplayName="StandardSpeed3" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
+                        <p1:StandardSpeed>300</p1:StandardSpeed>
+                        <p1:SpeedDifferences>
+                          <p1:float>-0.9</p1:float>
+                          <p1:float>0.9</p1:float>
+                        </p1:SpeedDifferences>
+                        <p1:SpeedDifferenceProbs>
+                          <p1:float>50</p1:float>
+                          <p1:float>50</p1:float>
+                        </p1:SpeedDifferenceProbs>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferenes3</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item2</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDiffereneProbs3</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item3</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>PerfTrack3</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item4</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeed3</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="SpeedDifferences" DisplayName="SpeedDifferences2" />
+                      <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs2" />
+                      <Property Name="StandardSpeed" DisplayName="StandardSpeed2" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
+                        <p1:StandardSpeed>200</p1:StandardSpeed>
+                        <p1:SpeedDifferences>
+                          <p1:float>-0.9</p1:float>
+                          <p1:float>0.9</p1:float>
+                        </p1:SpeedDifferences>
+                        <p1:SpeedDifferenceProbs>
+                          <p1:float>50</p1:float>
+                          <p1:float>50</p1:float>
+                        </p1:SpeedDifferenceProbs>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferenes2</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item2</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDiffereneProbs2</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item3</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>PerfTrack2</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item4</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeed2</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="SpeedDifferences" DisplayName="SpeedDifferences1" />
+                      <Property Name="SpeedDifferenceProbs" DisplayName="SpeedDifferenceProbs1" />
+                      <Property Name="StandardSpeed" DisplayName="StandardSpeed1" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:InitialisePerformanceTracking_SpeedDiscrimination">
+                        <p1:StandardSpeed>100</p1:StandardSpeed>
+                        <p1:SpeedDifferences>
+                          <p1:float>-0.9</p1:float>
+                          <p1:float>0.9</p1:float>
+                        </p1:SpeedDifferences>
+                        <p1:SpeedDifferenceProbs>
+                          <p1:float>50</p1:float>
+                          <p1:float>50</p1:float>
+                        </p1:SpeedDifferenceProbs>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferenes1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Merge" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:ToList" />
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferencesList</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item2</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDiffereneProbs4</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item2</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDiffereneProbs1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Merge" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:ToList" />
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>SpeedDifferenceProbList</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item3</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>PerfTrack4</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item3</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>PerfTrack1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Merge" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:ToList" />
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>PerfTrackList</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item4</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeed4</Name>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item4</Selector>
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeed1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Merge" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:ToList" />
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeedsList</Name>
+                    </Expression>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>25</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>25</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>25</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>25</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Merge" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Take">
+                        <rx:Count>4</rx:Count>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:ToList" />
+                    </Expression>
+                    <Expression xsi:type="BehaviorSubject">
+                      <Name>StandardSpeedsProbsList</Name>
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="1" To="31" Label="Source1" />
+                    <Edge From="1" To="38" Label="Source1" />
+                    <Edge From="1" To="45" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="3" To="28" Label="Source4" />
+                    <Edge From="4" To="5" Label="Source1" />
+                    <Edge From="5" To="6" Label="Source1" />
+                    <Edge From="5" To="8" Label="Source1" />
+                    <Edge From="5" To="10" Label="Source1" />
+                    <Edge From="5" To="12" Label="Source1" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="28" Label="Source3" />
+                    <Edge From="8" To="9" Label="Source1" />
+                    <Edge From="9" To="35" Label="Source3" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="42" Label="Source3" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="49" Label="Source3" />
+                    <Edge From="14" To="15" Label="Source1" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="15" To="18" Label="Source1" />
+                    <Edge From="15" To="20" Label="Source1" />
+                    <Edge From="15" To="22" Label="Source1" />
+                    <Edge From="16" To="17" Label="Source1" />
+                    <Edge From="17" To="28" Label="Source2" />
+                    <Edge From="18" To="19" Label="Source1" />
+                    <Edge From="19" To="35" Label="Source2" />
+                    <Edge From="20" To="21" Label="Source1" />
+                    <Edge From="21" To="42" Label="Source2" />
+                    <Edge From="22" To="23" Label="Source1" />
+                    <Edge From="23" To="49" Label="Source2" />
+                    <Edge From="24" To="25" Label="Source1" />
+                    <Edge From="25" To="26" Label="Source1" />
+                    <Edge From="25" To="33" Label="Source1" />
+                    <Edge From="25" To="40" Label="Source1" />
+                    <Edge From="25" To="47" Label="Source1" />
+                    <Edge From="26" To="27" Label="Source1" />
+                    <Edge From="27" To="28" Label="Source1" />
+                    <Edge From="28" To="29" Label="Source1" />
+                    <Edge From="29" To="30" Label="Source1" />
+                    <Edge From="31" To="32" Label="Source1" />
+                    <Edge From="32" To="35" Label="Source4" />
+                    <Edge From="33" To="34" Label="Source1" />
+                    <Edge From="34" To="35" Label="Source1" />
+                    <Edge From="35" To="36" Label="Source1" />
+                    <Edge From="36" To="37" Label="Source1" />
+                    <Edge From="38" To="39" Label="Source1" />
+                    <Edge From="39" To="42" Label="Source4" />
+                    <Edge From="40" To="41" Label="Source1" />
+                    <Edge From="41" To="42" Label="Source1" />
+                    <Edge From="42" To="43" Label="Source1" />
+                    <Edge From="43" To="44" Label="Source1" />
+                    <Edge From="45" To="46" Label="Source1" />
+                    <Edge From="46" To="49" Label="Source4" />
+                    <Edge From="47" To="48" Label="Source1" />
+                    <Edge From="48" To="49" Label="Source1" />
+                    <Edge From="49" To="50" Label="Source1" />
+                    <Edge From="50" To="51" Label="Source1" />
+                    <Edge From="52" To="53" Label="Source1" />
+                    <Edge From="52" To="54" Label="Source1" />
+                    <Edge From="52" To="55" Label="Source1" />
+                    <Edge From="52" To="56" Label="Source1" />
+                    <Edge From="53" To="57" Label="Source1" />
+                    <Edge From="54" To="57" Label="Source2" />
+                    <Edge From="55" To="57" Label="Source3" />
+                    <Edge From="56" To="57" Label="Source4" />
+                    <Edge From="57" To="58" Label="Source1" />
+                    <Edge From="58" To="59" Label="Source1" />
+                    <Edge From="59" To="60" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
             </Expression>
             <Expression xsi:type="GroupWorkflow">
               <Name>Track Engagement</Name>
@@ -6593,12 +6773,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="p1:TrackTaskEngagement_SpeedDiscrimination">
-                      <p1:trialResponses>
-                        <p1:int>1</p1:int>
-                        <p1:int>2</p1:int>
-                        <p1:int>2</p1:int>
-                        <p1:int>2</p1:int>
-                      </p1:trialResponses>
+                      <p1:trialResponses />
                       <p1:maxListLength>20</p1:maxListLength>
                       <p1:pEngagedThreshold>0.8</p1:pEngagedThreshold>
                     </Combinator>
@@ -7092,11 +7267,70 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Workflow>
               </Builder>
             </Expression>
+            <Expression xsi:type="io:CsvReader">
+              <io:FileName>ratioProbsTranspose_smaller.csv</io:FileName>
+              <io:ListSeparator>,</io:ListSeparator>
+              <io:ScanPattern>%f</io:ScanPattern>
+              <io:SkipRows>0</io:SkipRows>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ToList" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="p1:ReadMetaData_SpeedDiscrimination" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item1</Selector>
+            </Expression>
+            <Expression xsi:type="BehaviorSubject">
+              <Name>StandardSpeedsList</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Count</Selector>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item2</Selector>
+            </Expression>
+            <Expression xsi:type="BehaviorSubject">
+              <Name>StandardSpeedsProbsList</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item3</Selector>
+            </Expression>
+            <Expression xsi:type="BehaviorSubject">
+              <Name>SpeedDifferencesList</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item4</Selector>
+            </Expression>
+            <Expression xsi:type="BehaviorSubject">
+              <Name>SpeedDifferenceProbList</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item5</Selector>
+            </Expression>
+            <Expression xsi:type="BehaviorSubject">
+              <Name>PerfTrackList</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
             <Edge From="0" To="2" Label="Source1" />
             <Edge From="0" To="3" Label="Source1" />
+            <Edge From="0" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="6" To="10" Label="Source1" />
+            <Edge From="6" To="12" Label="Source1" />
+            <Edge From="6" To="14" Label="Source1" />
+            <Edge From="6" To="16" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -7318,6 +7552,18 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="gl:SampleOnUpdateFrame" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>LButton ShiftKey ControlKey A P Q Control</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:SampleOnRenderFrame" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:TakeUntil" />
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
             <Expression xsi:type="Combinator">
@@ -7631,18 +7877,21 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
             <Edge From="3" To="4" Label="Source1" />
             <Edge From="4" To="5" Label="Source1" />
             <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="7" Label="Source1" />
-            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="6" To="9" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source2" />
             <Edge From="9" To="10" Label="Source1" />
-            <Edge From="9" To="17" Label="Source1" />
-            <Edge From="10" To="11" Label="Source1" />
             <Edge From="11" To="12" Label="Source1" />
-            <Edge From="11" To="16" Label="Source1" />
             <Edge From="12" To="13" Label="Source1" />
+            <Edge From="12" To="20" Label="Source1" />
             <Edge From="13" To="14" Label="Source1" />
             <Edge From="14" To="15" Label="Source1" />
-            <Edge From="18" To="19" Label="Source1" />
-            <Edge From="18" To="20" Label="Source1" />
+            <Edge From="14" To="19" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="21" To="23" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
