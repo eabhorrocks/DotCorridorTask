@@ -11,7 +11,6 @@ using System.Reactive.Linq;
 public class WriteMetaData_SpeedDiscrimination
 {
     public List<float> StandardSpeedsList {get; set; }
-    public List<float> StandardSpeedsProbList {get; set; }
     public List<List<float>> SpeedDifferenceList {get; set; }  
     public List<List<float>> SpeedDifferenceProbList {get; set; }  
     public IObservable<List<float>> Process(IObservable<int> source)
@@ -21,10 +20,8 @@ public class WriteMetaData_SpeedDiscrimination
             List<float> output = new List<float>();
 
             output.Add(SpeedDifferenceList[0][value]);
-            Console.WriteLine(24);
             for (int iSpeed=0; iSpeed<StandardSpeedsList.Count(); iSpeed++)
             {
-                Console.WriteLine(iSpeed);
                 output.Add(SpeedDifferenceProbList[iSpeed][value]);
             }
 
