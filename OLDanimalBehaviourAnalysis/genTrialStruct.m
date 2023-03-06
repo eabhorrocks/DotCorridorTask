@@ -3,9 +3,9 @@ function trial = genTrialStruct(events, params, wheel, licks)
 
 trial = struct;
 for itrial = 1:numel(events.trial.sontimes) % completed trials...
-    trial(itrial).onTime = events.trial.sontimes(itrial);
-    trial(itrial).stimMoveTime = events.trial.movetimes(itrial) -  trial(itrial).onTime;
-    trial(itrial).stimOffTime = events.trial.sofftimes(itrial) - trial(itrial).onTime;
+    trial(itrial).onTime = events.trial(itrial).sontimes;
+    trial(itrial).stimMoveTime = events.trial(itrial).movetimes -  trial(itrial).onTime;
+    trial(itrial).stimOffTime = events.trial(itrial).sofftimes - trial(itrial).onTime;
     [~, paramIdx] = findNextEvent(params.eTime, trial(itrial).onTime);
     trial(itrial).type = params.TrialType(paramIdx);
     trial(itrial).velXL = params.VelXLeft(paramIdx);
