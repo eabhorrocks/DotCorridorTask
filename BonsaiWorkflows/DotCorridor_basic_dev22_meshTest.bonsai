@@ -403,8 +403,8 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="dsp:MatrixReader">
-                      <dsp:Path>meshmap_py_minus_hires.bin</dsp:Path>
-                      <dsp:FileName>meshmap_py_minus_hires.bin</dsp:FileName>
+                      <dsp:Path>MeshMap3dMatrix_041022.bin</dsp:Path>
+                      <dsp:FileName>MeshMap3dMatrix_041022.bin</dsp:FileName>
                       <dsp:Offset>0</dsp:Offset>
                       <dsp:SampleRate>10000000</dsp:SampleRate>
                       <dsp:ChannelCount>1001</dsp:ChannelCount>
@@ -623,19 +623,19 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
               <ScaleZ>100</ScaleZ>
               <MeshName>cube3d</MeshName>
               <Ambient>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
               </Ambient>
               <Diffuse>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
               </Diffuse>
               <Specular>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
               </Specular>
               <SpecularExponent>0</SpecularExponent>
               <RotationZ>0</RotationZ>
@@ -1153,138 +1153,138 @@ Item4.Item2 as transXR)</scr:Expression>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
                             <p1:int>2</p1:int>
                             <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
+                            <p1:int>2</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                       </p1:PerfTrackList>
                       <p1:rightInARow>
+                        <p1:int>-1</p1:int>
                         <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>5</p1:maxInARow>
@@ -5793,130 +5793,130 @@ Item4.Item2 as transXR)</scr:Expression>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
                                                     <p1:int>2</p1:int>
                                                     <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
+                                                    <p1:int>2</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                               </p1:perfTracking>
@@ -7058,7 +7058,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="gl:Delay">
-                <gl:DueTime>PT1S</gl:DueTime>
+                <gl:DueTime>PT0S</gl:DueTime>
               </Combinator>
             </Expression>
             <Expression xsi:type="BehaviorSubject">
@@ -7208,7 +7208,12 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="p1:TrackTaskEngagement_SpeedDiscrimination">
-                      <p1:trialResponses />
+                      <p1:trialResponses>
+                        <p1:int>2</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>2</p1:int>
+                        <p1:int>1</p1:int>
+                      </p1:trialResponses>
                       <p1:maxListLength>20</p1:maxListLength>
                       <p1:pEngagedThreshold>0.8</p1:pEngagedThreshold>
                     </Combinator>

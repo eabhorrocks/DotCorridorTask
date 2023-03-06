@@ -40,7 +40,7 @@ public class ComputeTrialResult_SpeedDiscrimination
                     if (response == 1) // response was right
                     {
                         perfTracking[standardSpeedIndex][speedDifferenceIndex][1]++;
-                        trialOutcome = 2; // correct right response
+                        trialOutcome = 1; // correct right response
                     }
                 }
                 else if (rightFaster==-1) //left faster
@@ -49,7 +49,7 @@ public class ComputeTrialResult_SpeedDiscrimination
                     if (response == -1)
                     {
                     perfTracking[standardSpeedIndex][speedDifferenceIndex][3]++;
-                    trialOutcome = 1; //correct left response
+                    trialOutcome = -1; //correct left response
                     }
                 }
             }

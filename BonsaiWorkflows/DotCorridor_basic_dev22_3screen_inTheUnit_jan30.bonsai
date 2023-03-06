@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.6.3"
+<WorkflowBuilder Version="2.7.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:gl="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders"
                  xmlns:res="clr-namespace:Bonsai.Resources;assembly=Bonsai.System"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
-                 xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
+                 xmlns:scr="clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions"
                  xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
                  xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
                  xmlns:p1="clr-namespace:;assembly=Extensions"
@@ -13,6 +13,7 @@
                  xmlns:p2="clr-namespace:Bonsai.Numerics.Distributions;assembly=Bonsai.Numerics"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:num="clr-namespace:Bonsai.Numerics;assembly=Bonsai.Numerics"
+                 xmlns:ipy="clr-namespace:Bonsai.Scripting.IronPython;assembly=Bonsai.Scripting.IronPython"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
@@ -22,7 +23,7 @@
           <Nodes>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="gl:CreateWindow">
-                <gl:Width>1280</gl:Width>
+                <gl:Width>1800</gl:Width>
                 <gl:Height>800</gl:Height>
                 <gl:VSync>On</gl:VSync>
                 <gl:SwapSync>false</gl:SwapSync>
@@ -31,7 +32,7 @@
                 <gl:CursorVisible>true</gl:CursorVisible>
                 <gl:Location xsi:nil="true" />
                 <gl:WindowBorder>Resizable</gl:WindowBorder>
-                <gl:WindowState>Normal</gl:WindowState>
+                <gl:WindowState>Maximized</gl:WindowState>
                 <gl:DisplayDevice>Second</gl:DisplayDevice>
                 <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
                 <gl:TargetUpdateFrequency xsi:nil="true" />
@@ -262,7 +263,332 @@
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
             <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:RenderFrame" />
+              <Combinator xsi:type="gl:UpdateFrame" />
+            </Expression>
+            <Expression xsi:type="rx:PublishSubject">
+              <Name>DrawStimuli</Name>
+            </Expression>
+            <Expression xsi:type="rx:PublishSubject">
+              <Name>DrawQuad</Name>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="GroupWorkflow">
+                <Name>Dome Render</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="gl:RenderFrame" />
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="GroupWorkflow">
+                        <Name>FrameEventLoggers</Name>
+                        <Workflow>
+                          <Nodes>
+                            <Expression xsi:type="WorkflowInput">
+                              <Name>Source1</Name>
+                            </Expression>
+                            <Expression xsi:type="SubscribeSubject">
+                              <Name>WheelName</Name>
+                            </Expression>
+                            <Expression xsi:type="PropertyMapping">
+                              <PropertyMappings>
+                                <Property Name="FileName" />
+                              </PropertyMappings>
+                            </Expression>
+                            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.FrameEventLogger.bonsai">
+                              <Name>Events</Name>
+                              <Append>false</Append>
+                              <Overwrite>false</Overwrite>
+                              <Suffix>Timestamp</Suffix>
+                              <FileName>test2_WheelLog.csv</FileName>
+                            </Expression>
+                            <Expression xsi:type="SubscribeSubject">
+                              <Name>EyeName</Name>
+                            </Expression>
+                            <Expression xsi:type="PropertyMapping">
+                              <PropertyMappings>
+                                <Property Name="FileName" />
+                              </PropertyMappings>
+                            </Expression>
+                            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.FrameEventLogger.bonsai">
+                              <Name>EyeEvents</Name>
+                              <Append>false</Append>
+                              <Overwrite>false</Overwrite>
+                              <Suffix>Timestamp</Suffix>
+                              <FileName>test2_EyeLog.csv</FileName>
+                            </Expression>
+                            <Expression xsi:type="SubscribeSubject">
+                              <Name>TrialName</Name>
+                            </Expression>
+                            <Expression xsi:type="PropertyMapping">
+                              <PropertyMappings>
+                                <Property Name="FileName" />
+                              </PropertyMappings>
+                            </Expression>
+                            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.FrameEventLogger.bonsai">
+                              <Name>TrialEvents</Name>
+                              <Append>false</Append>
+                              <Overwrite>false</Overwrite>
+                              <Suffix>Timestamp</Suffix>
+                              <FileName>test2_Trial.csv</FileName>
+                            </Expression>
+                            <Expression xsi:type="SubscribeSubject">
+                              <Name>PDname</Name>
+                            </Expression>
+                            <Expression xsi:type="PropertyMapping">
+                              <PropertyMappings>
+                                <Property Name="FileName" />
+                              </PropertyMappings>
+                            </Expression>
+                            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.FrameEventLogger.bonsai">
+                              <Name>PDAsyncEvents</Name>
+                              <Append>false</Append>
+                              <Overwrite>false</Overwrite>
+                              <Suffix>Timestamp</Suffix>
+                              <FileName>test2_PDAsync.csv</FileName>
+                            </Expression>
+                            <Expression xsi:type="WorkflowOutput" />
+                          </Nodes>
+                          <Edges>
+                            <Edge From="0" To="3" Label="Source1" />
+                            <Edge From="1" To="2" Label="Source1" />
+                            <Edge From="2" To="3" Label="Source2" />
+                            <Edge From="3" To="6" Label="Source1" />
+                            <Edge From="4" To="5" Label="Source1" />
+                            <Edge From="5" To="6" Label="Source2" />
+                            <Edge From="6" To="9" Label="Source1" />
+                            <Edge From="7" To="8" Label="Source1" />
+                            <Edge From="8" To="9" Label="Source2" />
+                            <Edge From="9" To="12" Label="Source1" />
+                            <Edge From="10" To="11" Label="Source1" />
+                            <Edge From="11" To="12" Label="Source2" />
+                            <Edge From="12" To="13" Label="Source1" />
+                          </Edges>
+                        </Workflow>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="gl:CreateCubemapCamera">
+                        <gl:Eye>
+                          <gl:X>0</gl:X>
+                          <gl:Y>0</gl:Y>
+                          <gl:Z>-100</gl:Z>
+                        </gl:Eye>
+                        <gl:NearClip>0.1</gl:NearClip>
+                        <gl:FarClip>1000</gl:FarClip>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>new(
+ViewMatrix as ViewMatrix,
+ProjectionMatrix as ProjectionMatrix,
+ViewMatrix.Row3.Yzw as Light)</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="rx:BehaviorSubject">
+                      <Name>Draw3DStim</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="gl:RenderCubemap">
+                        <gl:RenderState />
+                        <gl:ClearColor>Gray</gl:ClearColor>
+                        <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
+                        <gl:FaceSize xsi:nil="true" />
+                        <gl:InternalFormat>Rgb</gl:InternalFormat>
+                        <gl:MinFilter>Linear</gl:MinFilter>
+                        <gl:MagFilter>Linear</gl:MagFilter>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>MeshMapping</Name>
+                      <Description>Renders the current scene to a texture and applies mesh mapping and brightness correction as a post-processing effect.</Description>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:BindTexture">
+                              <gl:TextureSlot>Texture0</gl:TextureSlot>
+                              <gl:ShaderName>MeshMapSphere</gl:ShaderName>
+                              <gl:TextureTarget>TextureCubeMap</gl:TextureTarget>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Path" />
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="dsp:MatrixReader">
+                              <dsp:Path>meshmap_py_minus_hires.bin</dsp:Path>
+                              <dsp:Offset>0</dsp:Offset>
+                              <dsp:SampleRate>10000000</dsp:SampleRate>
+                              <dsp:ChannelCount>1001</dsp:ChannelCount>
+                              <dsp:BufferLength>3003</dsp:BufferLength>
+                              <dsp:Depth>F32</dsp:Depth>
+                              <dsp:Layout>RowMajor</dsp:Layout>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="dsp:Reshape">
+                              <dsp:Channels>3</dsp:Channels>
+                              <dsp:Rows>0</dsp:Rows>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="cv:Flip">
+                              <cv:Mode>Vertical</cv:Mode>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:LatestOnUpdateFrame" />
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:StoreImage">
+                              <gl:InternalFormat>Rgb32f</gl:InternalFormat>
+                              <gl:WrapS>Repeat</gl:WrapS>
+                              <gl:WrapT>Repeat</gl:WrapT>
+                              <gl:MinFilter>Linear</gl:MinFilter>
+                              <gl:MagFilter>Linear</gl:MagFilter>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:WithLatestFrom" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Item2</Selector>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:BindTexture">
+                              <gl:TextureSlot>Texture1</gl:TextureSlot>
+                              <gl:ShaderName>MeshMapSphere</gl:ShaderName>
+                              <gl:TextureTarget>Texture2D</gl:TextureTarget>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:BindTexture">
+                              <gl:TextureSlot>Texture0</gl:TextureSlot>
+                              <gl:ShaderName>MeshMapVector</gl:ShaderName>
+                              <gl:TextureTarget>Texture2D</gl:TextureTarget>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="gl:DrawMesh">
+                              <gl:ShaderName>MeshMapSphere</gl:ShaderName>
+                              <gl:MeshName>ViewportQuad</gl:MeshName>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="gl:DrawMesh">
+                                <gl:ShaderName>MeshMapVector</gl:ShaderName>
+                                <gl:MeshName>ViewportQuad</gl:MeshName>
+                              </Combinator>
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="cv:CameraCapture">
+                                <cv:Index>0</cv:Index>
+                                <cv:CaptureProperties />
+                              </Combinator>
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="gl:StoreImage">
+                                <gl:InternalFormat>Rgb32f</gl:InternalFormat>
+                                <gl:WrapS>Repeat</gl:WrapS>
+                                <gl:WrapT>Repeat</gl:WrapT>
+                                <gl:MinFilter>Linear</gl:MinFilter>
+                                <gl:MagFilter>Linear</gl:MagFilter>
+                              </Combinator>
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="ExternalizedMapping">
+                              <Property Name="Path" />
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="dsp:MatrixReader">
+                                <dsp:Path>meshmap8.bin</dsp:Path>
+                                <dsp:Offset>0</dsp:Offset>
+                                <dsp:SampleRate>10000000</dsp:SampleRate>
+                                <dsp:ChannelCount>101</dsp:ChannelCount>
+                                <dsp:BufferLength>303</dsp:BufferLength>
+                                <dsp:Depth>U8</dsp:Depth>
+                                <dsp:Layout>RowMajor</dsp:Layout>
+                              </Combinator>
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="dsp:Reshape">
+                                <dsp:Channels>3</dsp:Channels>
+                                <dsp:Rows>0</dsp:Rows>
+                              </Combinator>
+                            </Builder>
+                          </Expression>
+                          <Expression xsi:type="Disable">
+                            <Builder xsi:type="Combinator">
+                              <Combinator xsi:type="cv:ConvertToImage" />
+                            </Builder>
+                          </Expression>
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="1" Label="Source1" />
+                          <Edge From="1" To="8" Label="Source1" />
+                          <Edge From="2" To="3" Label="Source1" />
+                          <Edge From="3" To="4" Label="Source1" />
+                          <Edge From="4" To="5" Label="Source1" />
+                          <Edge From="5" To="6" Label="Source1" />
+                          <Edge From="6" To="7" Label="Source1" />
+                          <Edge From="7" To="8" Label="Source2" />
+                          <Edge From="8" To="9" Label="Source1" />
+                          <Edge From="9" To="10" Label="Source1" />
+                          <Edge From="10" To="11" Label="Source1" />
+                          <Edge From="11" To="12" Label="Source1" />
+                          <Edge From="12" To="13" Label="Source1" />
+                          <Edge From="13" To="14" Label="Source1" />
+                          <Edge From="15" To="16" Label="Source1" />
+                          <Edge From="17" To="18" Label="Source1" />
+                          <Edge From="18" To="19" Label="Source1" />
+                          <Edge From="19" To="20" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+                      <ClearColor>Gray</ClearColor>
+                      <GammaLut>LUT_GRB.bmp</GammaLut>
+                    </Expression>
+                    <Expression xsi:type="rx:BehaviorSubject">
+                      <Name>Draw3DQuad</Name>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="MemberSelector">
+                        <Selector>TimeStep.ElapsedRealTime</Selector>
+                      </Builder>
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="1" To="9" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="3" To="4" Label="Source1" />
+                    <Edge From="3" To="8" Label="Source1" />
+                    <Edge From="4" To="5" Label="Source1" />
+                    <Edge From="5" To="6" Label="Source1" />
+                    <Edge From="6" To="7" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="gl:RenderFrame" />
+              </Builder>
             </Expression>
             <Expression xsi:type="Disable">
               <Builder xsi:type="GroupWorkflow">
@@ -285,7 +611,7 @@
                       <Append>false</Append>
                       <Overwrite>false</Overwrite>
                       <Suffix>Timestamp</Suffix>
-                      <FileName>test2_WheelLog.csv</FileName>
+                      <FileName>M99999_SDTraining_WheelLog.csv</FileName>
                     </Expression>
                     <Expression xsi:type="SubscribeSubject">
                       <Name>EyeName</Name>
@@ -300,7 +626,7 @@
                       <Append>false</Append>
                       <Overwrite>false</Overwrite>
                       <Suffix>Timestamp</Suffix>
-                      <FileName>test2_EyeLog.csv</FileName>
+                      <FileName>M99999_SDTraining_EyeLog.csv</FileName>
                     </Expression>
                     <Expression xsi:type="SubscribeSubject">
                       <Name>TrialName</Name>
@@ -315,7 +641,7 @@
                       <Append>false</Append>
                       <Overwrite>false</Overwrite>
                       <Suffix>Timestamp</Suffix>
-                      <FileName>test2_Trial.csv</FileName>
+                      <FileName>M99999_SDTraining_Trial.csv</FileName>
                     </Expression>
                     <Expression xsi:type="SubscribeSubject">
                       <Name>PDname</Name>
@@ -330,7 +656,7 @@
                       <Append>false</Append>
                       <Overwrite>false</Overwrite>
                       <Suffix>Timestamp</Suffix>
-                      <FileName>test2_PDAsync.csv</FileName>
+                      <FileName>M99999_SDTraining_PDAsync.csv</FileName>
                     </Expression>
                     <Expression xsi:type="WorkflowOutput" />
                   </Nodes>
@@ -352,24 +678,79 @@
                 </Workflow>
               </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:CreateCubemapCamera">
-                <gl:Eye>
-                  <gl:X>0</gl:X>
-                  <gl:Y>0</gl:Y>
-                  <gl:Z>-100</gl:Z>
-                </gl:Eye>
-                <gl:NearClip>0.1</gl:NearClip>
-                <gl:FarClip>1000</gl:FarClip>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="gl:CreateCubemapCamera">
+                  <gl:Eye>
+                    <gl:X>0</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Z>0</gl:Z>
+                  </gl:Eye>
+                  <gl:NearClip>0.1</gl:NearClip>
+                  <gl:FarClip>1000</gl:FarClip>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="scr:ExpressionTransform">
-              <scr:Expression>new(
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="scr:ExpressionTransform">
+                <scr:Expression>new(
 ViewMatrix as ViewMatrix,
 ProjectionMatrix as ProjectionMatrix,
 ViewMatrix.Row3.Yzw as Light)</scr:Expression>
+              </Builder>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:BehaviorSubject">
+                <Name>Draw3DStim</Name>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="gl:RenderCubemap">
+                  <gl:RenderState />
+                  <gl:ClearColor>Gray</gl:ClearColor>
+                  <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
+                  <gl:FaceSize xsi:nil="true" />
+                  <gl:InternalFormat>Rgb</gl:InternalFormat>
+                  <gl:MinFilter>Linear</gl:MinFilter>
+                  <gl:MagFilter>Linear</gl:MagFilter>
+                </Combinator>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+                <ClearColor>Gray</ClearColor>
+                <GammaLut>LUT_GRB.bmp</GammaLut>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:BehaviorSubject">
+                <Name>Draw3DQuad</Name>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="MemberSelector">
+                <Selector>TimeStep.ElapsedRealTime</Selector>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:RenderFrame" />
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.CubemapView.bonsai">
+              <Eye>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-100</Z>
+              </Eye>
+              <NearClip>0.1</NearClip>
+              <FarClip>10000</FarClip>
+              <Light>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Light>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>Draw3DStim</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -383,186 +764,116 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <gl:MagFilter>Linear</gl:MagFilter>
               </Combinator>
             </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>MeshMapping</Name>
-              <Description>Renders the current scene to a texture and applies mesh mapping and brightness correction as a post-processing effect.</Description>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="WorkflowInput">
-                    <Name>Source1</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:BindTexture">
-                      <gl:TextureSlot>Texture0</gl:TextureSlot>
-                      <gl:ShaderName>MeshMapSphere</gl:ShaderName>
-                      <gl:TextureTarget>TextureCubeMap</gl:TextureTarget>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Path" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="dsp:MatrixReader">
-                      <dsp:Path>meshmap_py_minus_hires.bin</dsp:Path>
-                      <dsp:FileName>meshmap_py_minus_hires.bin</dsp:FileName>
-                      <dsp:Offset>0</dsp:Offset>
-                      <dsp:SampleRate>10000000</dsp:SampleRate>
-                      <dsp:ChannelCount>1001</dsp:ChannelCount>
-                      <dsp:BufferLength>3003</dsp:BufferLength>
-                      <dsp:Depth>F32</dsp:Depth>
-                      <dsp:Layout>RowMajor</dsp:Layout>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="dsp:Reshape">
-                      <dsp:Channels>3</dsp:Channels>
-                      <dsp:Rows>0</dsp:Rows>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="cv:Flip">
-                      <cv:Mode>Vertical</cv:Mode>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:LatestOnUpdateFrame" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:StoreImage">
-                      <gl:InternalFormat>Rgb32f</gl:InternalFormat>
-                      <gl:WrapS>Repeat</gl:WrapS>
-                      <gl:WrapT>Repeat</gl:WrapT>
-                      <gl:MinFilter>Linear</gl:MinFilter>
-                      <gl:MagFilter>Linear</gl:MagFilter>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:WithLatestFrom" />
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Item2</Selector>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:BindTexture">
-                      <gl:TextureSlot>Texture1</gl:TextureSlot>
-                      <gl:ShaderName>MeshMapSphere</gl:ShaderName>
-                      <gl:TextureTarget>Texture2D</gl:TextureTarget>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:BindTexture">
-                      <gl:TextureSlot>Texture0</gl:TextureSlot>
-                      <gl:ShaderName>MeshMapVector</gl:ShaderName>
-                      <gl:TextureTarget>Texture2D</gl:TextureTarget>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="gl:DrawMesh">
-                      <gl:ShaderName>MeshMapSphere</gl:ShaderName>
-                      <gl:MeshName>ViewportQuad</gl:MeshName>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="gl:DrawMesh">
-                        <gl:ShaderName>MeshMapVector</gl:ShaderName>
-                        <gl:MeshName>ViewportQuad</gl:MeshName>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="cv:CameraCapture">
-                        <cv:Index>0</cv:Index>
-                        <cv:CaptureProperties />
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="gl:StoreImage">
-                        <gl:InternalFormat>Rgb32f</gl:InternalFormat>
-                        <gl:WrapS>Repeat</gl:WrapS>
-                        <gl:WrapT>Repeat</gl:WrapT>
-                        <gl:MinFilter>Linear</gl:MinFilter>
-                        <gl:MagFilter>Linear</gl:MagFilter>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="ExternalizedMapping">
-                      <Property Name="Path" />
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="dsp:MatrixReader">
-                        <dsp:Path>meshmap8.bin</dsp:Path>
-                        <dsp:FileName>meshmap8.bin</dsp:FileName>
-                        <dsp:Offset>0</dsp:Offset>
-                        <dsp:SampleRate>10000000</dsp:SampleRate>
-                        <dsp:ChannelCount>101</dsp:ChannelCount>
-                        <dsp:BufferLength>303</dsp:BufferLength>
-                        <dsp:Depth>U8</dsp:Depth>
-                        <dsp:Layout>RowMajor</dsp:Layout>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="dsp:Reshape">
-                        <dsp:Channels>3</dsp:Channels>
-                        <dsp:Rows>0</dsp:Rows>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="cv:ConvertToImage" />
-                    </Builder>
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="8" Label="Source1" />
-                  <Edge From="2" To="3" Label="Source1" />
-                  <Edge From="3" To="4" Label="Source1" />
-                  <Edge From="4" To="5" Label="Source1" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source2" />
-                  <Edge From="8" To="9" Label="Source1" />
-                  <Edge From="9" To="10" Label="Source1" />
-                  <Edge From="10" To="11" Label="Source1" />
-                  <Edge From="11" To="12" Label="Source1" />
-                  <Edge From="12" To="13" Label="Source1" />
-                  <Edge From="13" To="14" Label="Source1" />
-                  <Edge From="15" To="16" Label="Source1" />
-                  <Edge From="17" To="18" Label="Source1" />
-                  <Edge From="18" To="19" Label="Source1" />
-                  <Edge From="19" To="20" Label="Source1" />
-                </Edges>
-              </Workflow>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>-13.5</X>
+                <Y>0</Y>
+                <Z>-11</Z>
+              </Translation>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
               <ClearColor>Gray</ClearColor>
               <GammaLut>LUT_GRB.bmp</GammaLut>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
-              <Name>Draw3DQuad</Name>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-18.5</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.333</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.333</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>13.5</X>
+                <Y>0</Y>
+                <Z>-11</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.666</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.666</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
             </Expression>
             <Expression xsi:type="MemberSelector">
               <Selector>TimeStep.ElapsedRealTime</Selector>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:UpdateFrame" />
-            </Expression>
-            <Expression xsi:type="PublishSubject">
-              <Name>DrawStimuli</Name>
-            </Expression>
-            <Expression xsi:type="PublishSubject">
-              <Name>DrawQuad</Name>
             </Expression>
           </Nodes>
           <Edges>
@@ -580,16 +891,31 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
             <Edge From="11" To="12" Label="Source2" />
             <Edge From="12" To="13" Label="Source1" />
             <Edge From="14" To="15" Label="Source1" />
-            <Edge From="15" To="16" Label="Source1" />
-            <Edge From="15" To="23" Label="Source1" />
-            <Edge From="16" To="17" Label="Source1" />
-            <Edge From="17" To="18" Label="Source1" />
-            <Edge From="17" To="22" Label="Source1" />
+            <Edge From="14" To="16" Label="Source1" />
             <Edge From="18" To="19" Label="Source1" />
             <Edge From="19" To="20" Label="Source1" />
+            <Edge From="19" To="26" Label="Source1" />
             <Edge From="20" To="21" Label="Source1" />
-            <Edge From="24" To="25" Label="Source1" />
-            <Edge From="24" To="26" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="21" To="25" Label="Source1" />
+            <Edge From="22" To="23" Label="Source1" />
+            <Edge From="23" To="24" Label="Source1" />
+            <Edge From="27" To="28" Label="Source1" />
+            <Edge From="27" To="43" Label="Source1" />
+            <Edge From="28" To="29" Label="Source1" />
+            <Edge From="29" To="30" Label="Source1" />
+            <Edge From="30" To="31" Label="Source1" />
+            <Edge From="30" To="35" Label="Source1" />
+            <Edge From="30" To="39" Label="Source1" />
+            <Edge From="31" To="32" Label="Source1" />
+            <Edge From="32" To="33" Label="Source1" />
+            <Edge From="33" To="34" Label="Source1" />
+            <Edge From="35" To="36" Label="Source1" />
+            <Edge From="36" To="37" Label="Source1" />
+            <Edge From="37" To="38" Label="Source1" />
+            <Edge From="39" To="40" Label="Source1" />
+            <Edge From="40" To="41" Label="Source1" />
+            <Edge From="41" To="42" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -601,46 +927,54 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
         <Name>Task</Name>
         <Workflow>
           <Nodes>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>Draw3DQuad</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="SubscribeSubject">
+                <Name>Draw3DQuad</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>QuadState</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="SubscribeSubject">
+                <Name>QuadState</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
-                <Property Name="Ambient" />
-                <Property Name="Diffuse" />
-                <Property Name="Specular" />
-              </PropertyMappings>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="Ambient" />
+                  <Property Name="Diffuse" />
+                  <Property Name="Specular" />
+                </PropertyMappings>
+              </Builder>
             </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-              <TranslationX>60</TranslationX>
-              <TranslationY>-33</TranslationY>
-              <TranslationZ>-70</TranslationZ>
-              <ScaleX>1</ScaleX>
-              <ScaleY>70</ScaleY>
-              <ScaleZ>100</ScaleZ>
-              <MeshName>cube3d</MeshName>
-              <Ambient>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Ambient>
-              <Diffuse>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Diffuse>
-              <Specular>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Specular>
-              <SpecularExponent>0</SpecularExponent>
-              <RotationZ>0</RotationZ>
-              <RotationY>0</RotationY>
-              <RotationX>0</RotationX>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
+                <TranslationX>60</TranslationX>
+                <TranslationY>-33</TranslationY>
+                <TranslationZ>-70</TranslationZ>
+                <ScaleX>1</ScaleX>
+                <ScaleY>70</ScaleY>
+                <ScaleZ>100</ScaleZ>
+                <MeshName>cube3d</MeshName>
+                <Ambient>
+                  <X>0</X>
+                  <Y>0</Y>
+                  <Z>0</Z>
+                </Ambient>
+                <Diffuse>
+                  <X>0</X>
+                  <Y>0</Y>
+                  <Z>0</Z>
+                </Diffuse>
+                <Specular>
+                  <X>0</X>
+                  <Y>0</Y>
+                  <Z>0</Z>
+                </Specular>
+                <SpecularExponent>0</SpecularExponent>
+                <RotationZ>0</RotationZ>
+                <RotationY>0</RotationY>
+                <RotationX>0</RotationX>
+              </Builder>
             </Expression>
             <Expression xsi:type="WorkflowInput">
               <Name>Source1</Name>
@@ -1020,7 +1354,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Edges>
               </Workflow>
             </Expression>
-            <Expression xsi:type="CreateObservable">
+            <Expression xsi:type="rx:CreateObservable">
               <Name>CreateTrial</Name>
               <Workflow>
                 <Nodes>
@@ -1075,217 +1409,113 @@ Item4.Item2 as transXR)</scr:Expression>
                         <p1:float>32</p1:float>
                         <p1:float>64</p1:float>
                         <p1:float>128</p1:float>
-                        <p1:float>256</p1:float>
                       </p1:StandardSpeedsList>
                       <p1:StandardSpeedsProbList>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
                       </p1:StandardSpeedsProbList>
                       <p1:SpeedDifferenceList>
                         <p1:ArrayOfFloat>
-                          <p1:float>4</p1:float>
-                          <p1:float>2</p1:float>
-                          <p1:float>0.5</p1:float>
-                          <p1:float>0.25</p1:float>
+                          <p1:float>8</p1:float>
+                          <p1:float>0.125</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>4</p1:float>
-                          <p1:float>2</p1:float>
-                          <p1:float>0.5</p1:float>
-                          <p1:float>0.25</p1:float>
+                          <p1:float>8</p1:float>
+                          <p1:float>0.125</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>4</p1:float>
-                          <p1:float>2</p1:float>
-                          <p1:float>0.5</p1:float>
-                          <p1:float>0.25</p1:float>
+                          <p1:float>8</p1:float>
+                          <p1:float>0.125</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>4</p1:float>
-                          <p1:float>2</p1:float>
-                          <p1:float>0.5</p1:float>
-                          <p1:float>0.25</p1:float>
-                        </p1:ArrayOfFloat>
-                        <p1:ArrayOfFloat>
-                          <p1:float>4</p1:float>
-                          <p1:float>2</p1:float>
-                          <p1:float>0.5</p1:float>
-                          <p1:float>0.25</p1:float>
+                          <p1:float>8</p1:float>
+                          <p1:float>0.125</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceList>
                       <p1:SpeedDifferenceProbList>
                         <p1:ArrayOfFloat>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                        </p1:ArrayOfFloat>
-                        <p1:ArrayOfFloat>
-                          <p1:float>50</p1:float>
-                          <p1:float>50</p1:float>
-                          <p1:float>0</p1:float>
+                          <p1:float>100</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
-                          <p1:float>50</p1:float>
-                          <p1:float>50</p1:float>
+                          <p1:float>100</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
+                          <p1:float>100</p1:float>
                           <p1:float>0</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>50</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
-                          <p1:float>50</p1:float>
-                          <p1:float>50</p1:float>
+                          <p1:float>100</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceProbList>
                       <p1:PerfTrackList>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>2</p1:int>
-                            <p1:int>2</p1:int>
-                            <p1:int>3</p1:int>
-                            <p1:int>3</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
+                            <p1:int>0</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                       </p1:PerfTrackList>
                       <p1:rightInARow>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
                         <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>5</p1:maxInARow>
                       <p1:autoBias>false</p1:autoBias>
@@ -1294,7 +1524,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <p1:minPRight>0</p1:minPRight>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="SelectMany">
+                  <Expression xsi:type="rx:SelectMany">
                     <Name>ThisTrial</Name>
                     <Workflow>
                       <Nodes>
@@ -1304,7 +1534,7 @@ Item4.Item2 as transXR)</scr:Expression>
                         <Expression xsi:type="MemberSelector">
                           <Selector>Item2</Selector>
                         </Expression>
-                        <Expression xsi:type="BehaviorSubject">
+                        <Expression xsi:type="rx:BehaviorSubject">
                           <Name>TrialInfo</Name>
                         </Expression>
                         <Expression xsi:type="GroupWorkflow">
@@ -1363,10 +1593,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                       <Name>DrawStimuli</Name>
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-                                      <Left>-180</Left>
-                                      <Right>180</Right>
-                                      <Bottom>-180</Bottom>
-                                      <Top>180</Top>
+                                      <Left>-360</Left>
+                                      <Right>360</Right>
+                                      <Bottom>-90</Bottom>
+                                      <Top>90</Top>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="gl:UpdateFrame" />
@@ -1418,7 +1648,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>128</Value>
+                                        <Value>32</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1445,7 +1675,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>32</Value>
+                                        <Value>256</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1623,7 +1853,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -1800,10 +2030,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>0</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -1856,15 +2086,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -2039,7 +2269,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2213,10 +2443,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>1</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -2263,15 +2493,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -2447,7 +2677,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2621,10 +2851,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>2</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -2671,15 +2901,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -2844,7 +3074,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3021,10 +3251,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>3</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -3077,15 +3307,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -3244,7 +3474,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                         <gl:MagFilter>Linear</gl:MagFilter>
                                       </Combinator>
                                     </Expression>
-                                    <Expression xsi:type="BehaviorSubject">
+                                    <Expression xsi:type="rx:BehaviorSubject">
                                       <Name>TextureLeft</Name>
                                     </Expression>
                                     <Expression xsi:type="WorkflowOutput" />
@@ -3386,7 +3616,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-4.266667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3563,10 +3793,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>0</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -3619,15 +3849,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -3802,7 +4032,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-4.266667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3976,10 +4206,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>1</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -4026,15 +4256,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -4210,7 +4440,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-4.266667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4384,10 +4614,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>2</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -4434,15 +4664,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -4607,7 +4837,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-4.266667</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4784,10 +5014,10 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:GenerateDotField">
                                                     <p1:numDots>238</p1:numDots>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                     <p1:rndseed>3</p1:rndseed>
                                                   </Combinator>
                                                 </Expression>
@@ -4840,15 +5070,15 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                                     <p1:dotLifetime>200</p1:dotLifetime>
-                                                    <p1:left>-180</p1:left>
-                                                    <p1:right>180</p1:right>
-                                                    <p1:top>180</p1:top>
-                                                    <p1:bottom>-180</p1:bottom>
+                                                    <p1:left>-360</p1:left>
+                                                    <p1:right>360</p1:right>
+                                                    <p1:top>90</p1:top>
+                                                    <p1:bottom>-90</p1:bottom>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
@@ -5007,7 +5237,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                         <gl:MagFilter>Linear</gl:MagFilter>
                                       </Combinator>
                                     </Expression>
-                                    <Expression xsi:type="BehaviorSubject">
+                                    <Expression xsi:type="rx:BehaviorSubject">
                                       <Name>TextureRight</Name>
                                     </Expression>
                                   </Nodes>
@@ -5065,7 +5295,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                 </Workflow>
                               </Expression>
                               <Expression xsi:type="Unit" />
-                              <Expression xsi:type="BehaviorSubject">
+                              <Expression xsi:type="rx:BehaviorSubject">
                                 <Name>ReadyToDraw</Name>
                               </Expression>
                               <Expression xsi:type="SubscribeSubject">
@@ -5114,8 +5344,8 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p2:CreateContinuousUniform">
-                                  <p2:Lower>1</p2:Lower>
-                                  <p2:Upper>1</p2:Upper>
+                                  <p2:Lower>5</p2:Lower>
+                                  <p2:Upper>10</p2:Upper>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Combinator">
@@ -5159,7 +5389,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT0.5S</rx:DueTime>
+                                  <rx:DueTime>PT1.5S</rx:DueTime>
                                   <rx:Period>PT0S</rx:Period>
                                 </Combinator>
                               </Expression>
@@ -5174,7 +5404,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                   <Property Name="ResponseWindowLength" />
                                 </PropertyMappings>
                               </Expression>
-                              <Expression xsi:type="SelectMany">
+                              <Expression xsi:type="rx:SelectMany">
                                 <Name>Response</Name>
                                 <Description>Workflow that encapsulates the various possible response paradigms</Description>
                                 <Workflow>
@@ -5182,7 +5412,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Expression xsi:type="WorkflowInput">
                                       <Name>Source1</Name>
                                     </Expression>
-                                    <Expression xsi:type="Condition">
+                                    <Expression xsi:type="rx:Condition">
                                       <Name>Passive Trial Type</Name>
                                       <Workflow>
                                         <Nodes>
@@ -5212,7 +5442,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MemberSelector">
                                             <Selector>Item3</Selector>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>Left Stimulus Faster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5256,7 +5486,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <rx:Count>1</rx:Count>
                                             </Combinator>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>Right Stimulus Faster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5333,7 +5563,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                       <Combinator xsi:type="rx:SubscribeWhen" />
                                     </Expression>
                                     <Expression xsi:type="Unit" />
-                                    <Expression xsi:type="Condition">
+                                    <Expression xsi:type="rx:Condition">
                                       <Name>Active-any Trial Type</Name>
                                       <Workflow>
                                         <Nodes>
@@ -5386,7 +5616,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Amb" />
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>GaveResponse?</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5406,7 +5636,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                               </Edges>
                                             </Workflow>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>LeftFaster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5454,7 +5684,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <rx:Count>1</rx:Count>
                                             </Combinator>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>RightFaster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5541,7 +5771,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                       <Combinator xsi:type="rx:SubscribeWhen" />
                                     </Expression>
                                     <Expression xsi:type="Unit" />
-                                    <Expression xsi:type="Condition">
+                                    <Expression xsi:type="rx:Condition">
                                       <Name>Active-noabort Trial Type</Name>
                                       <Workflow>
                                         <Nodes>
@@ -5611,7 +5841,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MemberSelector">
                                             <Selector>Item3</Selector>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>Left Stimulus Faster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5643,7 +5873,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <rx:Count>1</rx:Count>
                                             </Combinator>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>Right Stimulus Faster</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5702,7 +5932,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                       <Combinator xsi:type="rx:SubscribeWhen" />
                                     </Expression>
                                     <Expression xsi:type="Unit" />
-                                    <Expression xsi:type="Condition">
+                                    <Expression xsi:type="rx:Condition">
                                       <Name>Active Trial Type</Name>
                                       <Workflow>
                                         <Nodes>
@@ -5791,132 +6021,132 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <p1:perfTracking>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>2</p1:int>
-                                                    <p1:int>3</p1:int>
-                                                    <p1:int>3</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
+                                                    <p1:int>0</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                               </p1:perfTracking>
@@ -5932,7 +6162,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MemberSelector">
                                             <Selector>Item2</Selector>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>IncorrectResponse</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5956,7 +6186,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MulticastSubject">
                                             <Name>IncorrectResponse</Name>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>LeftCorrect</Name>
                                             <Workflow>
                                               <Nodes>
@@ -5980,7 +6210,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MulticastSubject">
                                             <Name>LeftCorrect</Name>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>RightCorrect</Name>
                                             <Workflow>
                                               <Nodes>
@@ -6004,7 +6234,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           <Expression xsi:type="MulticastSubject">
                                             <Name>RightCorrect</Name>
                                           </Expression>
-                                          <Expression xsi:type="Condition">
+                                          <Expression xsi:type="rx:Condition">
                                             <Name>NoResponse</Name>
                                             <Workflow>
                                               <Nodes>
@@ -6188,7 +6418,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="rx:First" />
                                     </Expression>
-                                    <Expression xsi:type="Condition">
+                                    <Expression xsi:type="rx:Condition">
                                       <Workflow>
                                         <Nodes>
                                           <Expression xsi:type="WorkflowInput">
@@ -6202,7 +6432,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                       </Workflow>
                                     </Expression>
                                     <Expression xsi:type="Unit" />
-                                    <Expression xsi:type="BehaviorSubject">
+                                    <Expression xsi:type="rx:BehaviorSubject">
                                       <Name>AbortTrial</Name>
                                     </Expression>
                                     <Expression xsi:type="WorkflowOutput" />
@@ -6297,7 +6527,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Expression xsi:type="SubscribeSubject">
                                       <Name>Draw3DStim</Name>
                                     </Expression>
-                                    <Expression xsi:type="Sink">
+                                    <Expression xsi:type="rx:Sink">
                                       <Name>BindLeft</Name>
                                       <Workflow>
                                         <Nodes>
@@ -6386,9 +6616,9 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawTexturedModel.bonsai">
                                       <TranslationX>-100</TranslationX>
                                       <TranslationY>0</TranslationY>
-                                      <TranslationZ>-200</TranslationZ>
-                                      <ScaleX>360</ScaleX>
-                                      <ScaleY>360</ScaleY>
+                                      <TranslationZ>0</TranslationZ>
+                                      <ScaleX>720</ScaleX>
+                                      <ScaleY>180</ScaleY>
                                       <ScaleZ>1</ScaleZ>
                                       <MeshName>Plane</MeshName>
                                       <Ambient>
@@ -6411,7 +6641,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                       <RotationY>90</RotationY>
                                       <RotationX>0</RotationX>
                                     </Expression>
-                                    <Expression xsi:type="Sink">
+                                    <Expression xsi:type="rx:Sink">
                                       <Name>BindRight</Name>
                                       <Workflow>
                                         <Nodes>
@@ -6464,9 +6694,9 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawTexturedModel.bonsai">
                                       <TranslationX>100</TranslationX>
                                       <TranslationY>0</TranslationY>
-                                      <TranslationZ>-200</TranslationZ>
-                                      <ScaleX>360</ScaleX>
-                                      <ScaleY>360</ScaleY>
+                                      <TranslationZ>0</TranslationZ>
+                                      <ScaleX>720</ScaleX>
+                                      <ScaleY>180</ScaleY>
                                       <ScaleZ>1</ScaleZ>
                                       <MeshName>Plane</MeshName>
                                       <Ambient>
@@ -6506,22 +6736,22 @@ Item4.Item2 as transXR)</scr:Expression>
                                     <Edge From="4" To="5" Label="Source2" />
                                     <Edge From="5" To="6" Label="Source1" />
                                     <Edge From="6" To="7" Label="Source1" />
-                                    <Edge From="7" To="16" Label="Source4" />
-                                    <Edge From="7" To="20" Label="Source4" />
+                                    <Edge From="7" To="16" Label="Source3" />
+                                    <Edge From="7" To="20" Label="Source3" />
                                     <Edge From="8" To="10" Label="Source2" />
                                     <Edge From="9" To="10" Label="Source1" />
                                     <Edge From="10" To="11" Label="Source1" />
                                     <Edge From="11" To="12" Label="Source1" />
-                                    <Edge From="12" To="16" Label="Source2" />
-                                    <Edge From="12" To="20" Label="Source2" />
+                                    <Edge From="12" To="16" Label="Source4" />
+                                    <Edge From="12" To="20" Label="Source4" />
                                     <Edge From="13" To="14" Label="Source1" />
                                     <Edge From="13" To="18" Label="Source1" />
                                     <Edge From="14" To="15" Label="Source1" />
-                                    <Edge From="15" To="16" Label="Source3" />
+                                    <Edge From="15" To="16" Label="Source2" />
                                     <Edge From="16" To="21" Label="Source1" />
                                     <Edge From="17" To="20" Label="Source1" />
                                     <Edge From="18" To="19" Label="Source1" />
-                                    <Edge From="19" To="20" Label="Source3" />
+                                    <Edge From="19" To="20" Label="Source2" />
                                     <Edge From="20" To="21" Label="Source2" />
                                     <Edge From="21" To="22" Label="Source1" />
                                   </Edges>
@@ -6566,7 +6796,7 @@ Item4.Item2 as transXR)</scr:Expression>
                             </Edges>
                           </Workflow>
                         </Expression>
-                        <Expression xsi:type="BehaviorSubject">
+                        <Expression xsi:type="rx:BehaviorSubject">
                           <Name>StimulusEnded</Name>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -6578,13 +6808,13 @@ Item4.Item2 as transXR)</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="gl:Delay">
-                            <gl:DueTime>PT1S</gl:DueTime>
+                            <gl:DueTime>PT7.109S</gl:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="SubscribeSubject">
                           <Name>TimeSinceLastLick</Name>
                         </Expression>
-                        <Expression xsi:type="Condition">
+                        <Expression xsi:type="rx:Condition">
                           <Workflow>
                             <Nodes>
                               <Expression xsi:type="WorkflowInput">
@@ -6600,7 +6830,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="GreaterThan">
                                 <Operand xsi:type="DoubleProperty">
-                                  <Value>1</Value>
+                                  <Value>0</Value>
                                 </Operand>
                               </Expression>
                               <Expression xsi:type="WorkflowOutput" />
@@ -6621,90 +6851,92 @@ Item4.Item2 as transXR)</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Unit" />
                         <Expression xsi:type="WorkflowOutput" />
-                        <Expression xsi:type="GroupWorkflow">
-                          <Name>Draw Masking Planes</Name>
-                          <Workflow>
-                            <Nodes>
-                              <Expression xsi:type="SubscribeSubject">
-                                <Name>Draw3DStim</Name>
-                              </Expression>
-                              <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-                                <TranslationX>0</TranslationX>
-                                <TranslationY>0</TranslationY>
-                                <TranslationZ>-25</TranslationZ>
-                                <ScaleX>1000</ScaleX>
-                                <ScaleY>2500</ScaleY>
-                                <ScaleZ>0</ScaleZ>
-                                <MeshName>Plane</MeshName>
-                                <Ambient>
-                                  <X>0.5</X>
-                                  <Y>0.5</Y>
-                                  <Z>0.5</Z>
-                                </Ambient>
-                                <Diffuse>
-                                  <X>0</X>
-                                  <Y>0</Y>
-                                  <Z>0</Z>
-                                </Diffuse>
-                                <Specular>
-                                  <X>0</X>
-                                  <Y>0</Y>
-                                  <Z>0</Z>
-                                </Specular>
-                                <SpecularExponent>0</SpecularExponent>
-                                <RotationZ>0</RotationZ>
-                                <RotationY>0</RotationY>
-                                <RotationX>0</RotationX>
-                              </Expression>
-                              <Expression xsi:type="Combinator">
-                                <Combinator xsi:type="StringProperty">
-                                  <Value>Background plane (stops flickering)</Value>
-                                </Combinator>
-                              </Expression>
-                              <Expression xsi:type="SubscribeSubject">
-                                <Name>Draw3DStim</Name>
-                              </Expression>
-                              <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-                                <TranslationX>0</TranslationX>
-                                <TranslationY>40</TranslationY>
-                                <TranslationZ>-7</TranslationZ>
-                                <ScaleX>300</ScaleX>
-                                <ScaleY>25</ScaleY>
-                                <ScaleZ>0</ScaleZ>
-                                <MeshName>Plane</MeshName>
-                                <Ambient>
-                                  <X>0.5</X>
-                                  <Y>0.5</Y>
-                                  <Z>0.5</Z>
-                                </Ambient>
-                                <Diffuse>
-                                  <X>0</X>
-                                  <Y>0</Y>
-                                  <Z>0</Z>
-                                </Diffuse>
-                                <Specular>
-                                  <X>0</X>
-                                  <Y>0</Y>
-                                  <Z>0</Z>
-                                </Specular>
-                                <SpecularExponent>0</SpecularExponent>
-                                <RotationZ>0</RotationZ>
-                                <RotationY>0</RotationY>
-                                <RotationX>0</RotationX>
-                              </Expression>
-                              <Expression xsi:type="Combinator">
-                                <Combinator xsi:type="StringProperty">
-                                  <Value>ceiling mask for pole</Value>
-                                </Combinator>
-                              </Expression>
-                            </Nodes>
-                            <Edges>
-                              <Edge From="0" To="1" Label="Source1" />
-                              <Edge From="1" To="2" Label="Source1" />
-                              <Edge From="3" To="4" Label="Source1" />
-                              <Edge From="4" To="5" Label="Source1" />
-                            </Edges>
-                          </Workflow>
+                        <Expression xsi:type="Disable">
+                          <Builder xsi:type="GroupWorkflow">
+                            <Name>Draw Masking Planes</Name>
+                            <Workflow>
+                              <Nodes>
+                                <Expression xsi:type="SubscribeSubject">
+                                  <Name>Draw3DStim</Name>
+                                </Expression>
+                                <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
+                                  <TranslationX>0</TranslationX>
+                                  <TranslationY>0</TranslationY>
+                                  <TranslationZ>-25</TranslationZ>
+                                  <ScaleX>1000</ScaleX>
+                                  <ScaleY>2500</ScaleY>
+                                  <ScaleZ>0</ScaleZ>
+                                  <MeshName>Plane</MeshName>
+                                  <Ambient>
+                                    <X>0.5</X>
+                                    <Y>0.5</Y>
+                                    <Z>0.5</Z>
+                                  </Ambient>
+                                  <Diffuse>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                                    <Z>0</Z>
+                                  </Diffuse>
+                                  <Specular>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                                    <Z>0</Z>
+                                  </Specular>
+                                  <SpecularExponent>0</SpecularExponent>
+                                  <RotationZ>0</RotationZ>
+                                  <RotationY>0</RotationY>
+                                  <RotationX>0</RotationX>
+                                </Expression>
+                                <Expression xsi:type="Combinator">
+                                  <Combinator xsi:type="StringProperty">
+                                    <Value>Background plane (stops flickering)</Value>
+                                  </Combinator>
+                                </Expression>
+                                <Expression xsi:type="SubscribeSubject">
+                                  <Name>Draw3DStim</Name>
+                                </Expression>
+                                <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
+                                  <TranslationX>0</TranslationX>
+                                  <TranslationY>40</TranslationY>
+                                  <TranslationZ>-7</TranslationZ>
+                                  <ScaleX>300</ScaleX>
+                                  <ScaleY>25</ScaleY>
+                                  <ScaleZ>0</ScaleZ>
+                                  <MeshName>Plane</MeshName>
+                                  <Ambient>
+                                    <X>0.5</X>
+                                    <Y>0.5</Y>
+                                    <Z>0.5</Z>
+                                  </Ambient>
+                                  <Diffuse>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                                    <Z>0</Z>
+                                  </Diffuse>
+                                  <Specular>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                                    <Z>0</Z>
+                                  </Specular>
+                                  <SpecularExponent>0</SpecularExponent>
+                                  <RotationZ>0</RotationZ>
+                                  <RotationY>0</RotationY>
+                                  <RotationX>0</RotationX>
+                                </Expression>
+                                <Expression xsi:type="Combinator">
+                                  <Combinator xsi:type="StringProperty">
+                                    <Value>ceiling mask for pole</Value>
+                                  </Combinator>
+                                </Expression>
+                              </Nodes>
+                              <Edges>
+                                <Edge From="0" To="1" Label="Source1" />
+                                <Edge From="1" To="2" Label="Source1" />
+                                <Edge From="3" To="4" Label="Source1" />
+                                <Edge From="4" To="5" Label="Source1" />
+                              </Edges>
+                            </Workflow>
+                          </Builder>
                         </Expression>
                         <Expression xsi:type="GroupWorkflow">
                           <Name>UpdateQuad</Name>
@@ -6823,7 +7055,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                 <Expression xsi:type="Combinator">
                                   <Combinator xsi:type="rx:Average" />
                                 </Expression>
-                                <Expression xsi:type="Condition">
+                                <Expression xsi:type="rx:Condition">
                                   <Workflow>
                                     <Nodes>
                                       <Expression xsi:type="WorkflowInput">
@@ -6881,7 +7113,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="gl:Timer">
-                                  <gl:DueTime>PT3S</gl:DueTime>
+                                  <gl:DueTime>PT10S</gl:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Unit" />
@@ -6896,7 +7128,7 @@ Item4.Item2 as transXR)</scr:Expression>
                             </Edges>
                           </Workflow>
                         </Expression>
-                        <Expression xsi:type="BehaviorSubject">
+                        <Expression xsi:type="rx:BehaviorSubject">
                           <Name>EndStimulus</Name>
                         </Expression>
                       </Nodes>
@@ -6925,9 +7157,9 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Unit" />
                   <Expression xsi:type="WorkflowOutput" />
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Parameters</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
                   </Expression>
                   <Expression xsi:type="GroupWorkflow">
                     <Name>Check No Early Licks</Name>
@@ -6985,7 +7217,7 @@ Item4.Item2 as transXR)</scr:Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:First" />
                         </Expression>
-                        <Expression xsi:type="Condition">
+                        <Expression xsi:type="rx:Condition">
                           <Workflow>
                             <Nodes>
                               <Expression xsi:type="WorkflowInput">
@@ -6999,7 +7231,7 @@ Item4.Item2 as transXR)</scr:Expression>
                           </Workflow>
                         </Expression>
                         <Expression xsi:type="Unit" />
-                        <Expression xsi:type="BehaviorSubject">
+                        <Expression xsi:type="rx:BehaviorSubject">
                           <Name>AbortTrial</Name>
                         </Expression>
                         <Expression xsi:type="WorkflowOutput" />
@@ -7058,10 +7290,10 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="gl:Delay">
-                <gl:DueTime>PT1S</gl:DueTime>
+                <gl:DueTime>PT0S</gl:DueTime>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>TrialEnd</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -7104,7 +7336,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:TakeUntil" />
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>WriteMetadata</Name>
                   </Expression>
                   <Expression xsi:type="Unit" />
@@ -7216,7 +7448,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item1</Selector>
                   </Expression>
-                  <Expression xsi:type="Condition">
+                  <Expression xsi:type="rx:Condition">
                     <Workflow>
                       <Nodes>
                         <Expression xsi:type="WorkflowInput">
@@ -7238,7 +7470,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="SubscribeSubject">
                     <Name>DoTimeout</Name>
                   </Expression>
-                  <Expression xsi:type="Condition">
+                  <Expression xsi:type="rx:Condition">
                     <Workflow>
                       <Nodes>
                         <Expression xsi:type="WorkflowInput">
@@ -7344,7 +7576,7 @@ Item4.Item2 as transXR)</scr:Expression>
                     <Property Name="FileName" DisplayName="MetadataFileToLoad" />
                   </Expression>
                   <Expression xsi:type="io:CsvReader">
-                    <io:FileName>M99999_SDTraining_Metadata.csv</io:FileName>
+                    <io:FileName>Passive_D1Stimuli.csv</io:FileName>
                     <io:ListSeparator>,</io:ListSeparator>
                     <io:ScanPattern>%f</io:ScanPattern>
                     <io:SkipRows>0</io:SkipRows>
@@ -7358,31 +7590,31 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item1</Selector>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>StandardSpeedsList</Name>
                   </Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item2</Selector>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>StandardSpeedsProbsList</Name>
                   </Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item3</Selector>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>SpeedDifferencesList</Name>
                   </Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item4</Selector>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>SpeedDifferenceProbList</Name>
                   </Expression>
                   <Expression xsi:type="MemberSelector">
                     <Selector>Item5</Selector>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>PerfTrackList</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7391,7 +7623,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
                     <scr:Expression>it[0]</scr:Expression>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>TrialType</Name>
                   </Expression>
                 </Nodes>
@@ -7462,7 +7694,7 @@ Item4.Item2 as transXR)</scr:Expression>
                     <Combinator xsi:type="rx:Merge" />
                   </Expression>
                   <Expression xsi:type="rx:Accumulate" />
-                  <Expression xsi:type="Condition">
+                  <Expression xsi:type="rx:Condition">
                     <Workflow>
                       <Nodes>
                         <Expression xsi:type="WorkflowInput">
@@ -7722,7 +7954,7 @@ Item4.Item2 as transXR)</scr:Expression>
               <Format>{0}_{1}</Format>
               <Selector>Item2,Item1</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>FilenamePrefix</Name>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -7732,35 +7964,35 @@ Item4.Item2 as transXR)</scr:Expression>
               <Format>{0}_EyeLog.csv</Format>
               <Selector>it</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>EyeName</Name>
             </Expression>
             <Expression xsi:type="Format">
               <Format>{0}_PDAsync.csv</Format>
               <Selector>it</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>PDname</Name>
             </Expression>
             <Expression xsi:type="Format">
               <Format>{0}_WheelLog.csv</Format>
               <Selector>it</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>WheelName</Name>
             </Expression>
             <Expression xsi:type="Format">
               <Format>{0}_Trial.csv</Format>
               <Selector>it</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>TrialName</Name>
             </Expression>
             <Expression xsi:type="Format">
               <Format>{0}_Metadata.csv</Format>
               <Selector>it</Selector>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>MetadataName</Name>
             </Expression>
           </Nodes>
@@ -7798,55 +8030,60 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>180</Value>
+                      <Value>90</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Top</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
                   </Expression>
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="Value" DisplayName="BottomBorder" />
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>-180</Value>
+                      <Value>-90</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Bottom</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
                   </Expression>
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="Value" DisplayName="LeftBorder" />
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>-180</Value>
+                      <Value>-360</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Left</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
                   </Expression>
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="Value" DisplayName="RightBorder" />
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>180</Value>
+                      <Value>360</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Right</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
+                  </Expression>
+                  <Expression xsi:type="Disable">
+                    <Builder xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Builder>
                   </Expression>
                   <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
+                    <Combinator xsi:type="rx:CombineLatest" />
                   </Expression>
-                  <Expression xsi:type="ReplaySubject">
+                  <Expression xsi:type="rx:ReplaySubject">
                     <Name>Borders</Name>
-                    <BufferSize xsi:nil="true" />
+                    <rx:BufferSize xsi:nil="true" />
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
                 </Nodes>
@@ -7865,6 +8102,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Edge From="11" To="12" Label="Source4" />
                   <Edge From="12" To="13" Label="Source1" />
                   <Edge From="13" To="14" Label="Source1" />
+                  <Edge From="14" To="15" Label="Source1" />
                 </Edges>
               </Workflow>
             </Expression>
@@ -7877,23 +8115,23 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>0.5</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>MotionDelay</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="DoubleProperty">
-                      <Value>1</Value>
+                      <Value>5</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>ISI Lower</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="DoubleProperty">
-                      <Value>1</Value>
+                      <Value>10</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>ISI Upper</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7901,7 +8139,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>0.5</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>ResponseWindowDelay</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7909,7 +8147,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>5</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>ResponseWindowLength</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7917,7 +8155,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>1000</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>NoLickTime</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7925,7 +8163,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>2</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>StimulusDuration</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7933,7 +8171,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>0</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>TimeoutTime</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7941,7 +8179,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>false</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>DoTimeout</Name>
                   </Expression>
                 </Nodes>
@@ -7963,19 +8201,19 @@ Item4.Item2 as transXR)</scr:Expression>
               <Workflow>
                 <Nodes>
                   <Expression xsi:type="Unit" />
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>IncorrectResponse</Name>
                   </Expression>
                   <Expression xsi:type="Unit" />
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>LeftCorrect</Name>
                   </Expression>
                   <Expression xsi:type="Unit" />
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>RightCorrect</Name>
                   </Expression>
                   <Expression xsi:type="Unit" />
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>NoResponse</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -7988,7 +8226,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <rx:Count>1</rx:Count>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>TrialResults</Name>
                   </Expression>
                 </Nodes>
@@ -8007,7 +8245,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <num:Seed>42</num:Seed>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>Random</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8015,7 +8253,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>0</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="PublishSubject">
+            <Expression xsi:type="rx:PublishSubject">
               <Name>Sync</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8023,7 +8261,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>1</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>TrialProgress</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8031,7 +8269,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>0</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>SyncPulse</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8039,7 +8277,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>0</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>QuadState</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8047,7 +8285,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>0</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>EyeFrameCount</Name>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -8055,15 +8293,15 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Value>0</Value>
               </Combinator>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>runTrial</Name>
             </Expression>
             <Expression xsi:type="Unit" />
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>EndWorkflow</Name>
             </Expression>
             <Expression xsi:type="Unit" />
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>EndStimulus</Name>
             </Expression>
           </Nodes>
@@ -8087,7 +8325,7 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>TrialType</Name>
             </Expression>
-            <Expression xsi:type="Condition">
+            <Expression xsi:type="rx:Condition">
               <Name>Passive Trial Type</Name>
               <Workflow>
                 <Nodes>
@@ -8157,7 +8395,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Edges>
               </Workflow>
             </Expression>
-            <Expression xsi:type="Condition">
+            <Expression xsi:type="rx:Condition">
               <Name>Active-any Trial Type</Name>
               <Workflow>
                 <Nodes>
@@ -8227,7 +8465,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Edges>
               </Workflow>
             </Expression>
-            <Expression xsi:type="Condition">
+            <Expression xsi:type="rx:Condition">
               <Name>Active-noabort Trial Type</Name>
               <Workflow>
                 <Nodes>
@@ -8297,7 +8535,7 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Edges>
               </Workflow>
             </Expression>
-            <Expression xsi:type="Condition">
+            <Expression xsi:type="rx:Condition">
               <Name>Active Trial Type</Name>
               <Workflow>
                 <Nodes>
@@ -8418,10 +8656,10 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:Merge" />
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>lastKeyState</Name>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>delayKeyState</Name>
                   </Expression>
                   <Expression xsi:type="SubscribeSubject">
@@ -8436,7 +8674,7 @@ Item4.Item2 as transXR)</scr:Expression>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="Unit" />
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>TrialOver</Name>
                   </Expression>
                 </Nodes>
@@ -8496,18 +8734,18 @@ Item4.Item2 as transXR)</scr:Expression>
                 <Nodes>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>200</Value>
+                      <Value>20</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>RightValveOpenTime</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>300</Value>
+                      <Value>20</Value>
                     </Combinator>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>LeftValveOpenTime</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -8525,7 +8763,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>300</Value>
+                      <Value>20</Value>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
@@ -8537,7 +8775,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
                     <scr:Expression>it.Item1+it.Item2</scr:Expression>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>LeftRewardString</Name>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -8555,7 +8793,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="FloatProperty">
-                      <Value>200</Value>
+                      <Value>20</Value>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
@@ -8567,7 +8805,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
                     <scr:Expression>it.Item1+it.Item2</scr:Expression>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>RightRewardString</Name>
                   </Expression>
                 </Nodes>
@@ -8604,7 +8842,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>l300</Value>
+                <Value>l20</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="MulticastSubject">
@@ -8623,7 +8861,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>r200</Value>
+                <Value>r20</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="MulticastSubject">
@@ -8632,7 +8870,7 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty" />
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
+            <Expression xsi:type="rx:BehaviorSubject">
               <Name>SerialToSend</Name>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -8646,6 +8884,34 @@ Item4.Item2 as transXR)</scr:Expression>
                 </Combinator>
               </Builder>
             </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>K</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>l20</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="MulticastSubject">
+              <Name>SerialToSend</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>L</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>r20</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="MulticastSubject">
+              <Name>SerialToSend</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="1" To="4" Label="Source1" />
@@ -8658,6 +8924,10 @@ Item4.Item2 as transXR)</scr:Expression>
             <Edge From="9" To="10" Label="Source1" />
             <Edge From="11" To="12" Label="Source1" />
             <Edge From="13" To="14" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="18" To="19" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -8665,32 +8935,37 @@ Item4.Item2 as transXR)</scr:Expression>
         <Name>Get Licks</Name>
         <Workflow>
           <Nodes>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="wie:KeyDown">
-                <wie:Filter>Right</wie:Filter>
-                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="wie:KeyDown">
+                  <wie:Filter>Right</wie:Filter>
+                  <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Unit" />
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="wie:KeyDown">
-                <wie:Filter>Left</wie:Filter>
-                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Unit" />
             </Expression>
-            <Expression xsi:type="Unit" />
-            <Expression xsi:type="Unit" />
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Merge" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:BehaviorSubject">
+                <Name>RightLick</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
-              <Name>RightLick</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="wie:KeyDown">
+                  <wie:Filter>Left</wie:Filter>
+                  <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Merge" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Unit" />
             </Expression>
-            <Expression xsi:type="BehaviorSubject">
-              <Name>LeftLick</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:BehaviorSubject">
+                <Name>LeftLick</Name>
+              </Builder>
             </Expression>
             <Expression xsi:type="GroupWorkflow">
               <Name>Check For Recent Licks</Name>
@@ -8750,7 +9025,7 @@ Item4.Item2 as transXR)</scr:Expression>
                       <Value>1000</Value>
                     </Operand>
                   </Expression>
-                  <Expression xsi:type="BehaviorSubject">
+                  <Expression xsi:type="rx:BehaviorSubject">
                     <Name>TimeSinceLastLick</Name>
                   </Expression>
                 </Nodes>
@@ -8776,13 +9051,164 @@ Item4.Item2 as transXR)</scr:Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="5" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Arduino</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:CreateSerialPort">
+                <io:Name>ArduinoSerial</io:Name>
+                <io:PortName>COM3</io:PortName>
+                <io:BaudRate>250000</io:BaudRate>
+                <io:Encoding>utf-8</io:Encoding>
+                <io:Parity>None</io:Parity>
+                <io:ParityReplace>63</io:ParityReplace>
+                <io:DataBits>8</io:DataBits>
+                <io:StopBits>One</io:StopBits>
+                <io:Handshake>None</io:Handshake>
+                <io:DiscardNull>false</io:DiscardNull>
+                <io:DtrEnable>true</io:DtrEnable>
+                <io:RtsEnable>false</io:RtsEnable>
+                <io:ReadBufferSize>4096</io:ReadBufferSize>
+                <io:WriteBufferSize>2048</io:WriteBufferSize>
+                <io:ReceivedBytesThreshold>1</io:ReceivedBytesThreshold>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="PortName" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:SerialStringRead">
+                <io:PortName>ArduinoSerial</io:PortName>
+                <io:NewLine>\n</io:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:SampleOnRenderFrame" />
+            </Expression>
+            <Expression xsi:type="rx:Condition">
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="ipy:PythonTransform">
+                    <ipy:Script>@returns(bool)
+def process(value):
+  mylist = value.split("\t")
+
+  if len(mylist) == 3:
+    return True
+  else:
+    return False
+
+</ipy:Script>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="Parse">
+              <Pattern>%i\t%i\t%i</Pattern>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item1</Selector>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item2</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:DistinctUntilChanged" />
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>LeftLick</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item3</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:DistinctUntilChanged" />
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>RightLick</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>LButton A Shift</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>l20</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:SerialStringWrite">
+                <io:PortName>ArduinoSerial</io:PortName>
+                <io:NewLine>\r</io:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>r20</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:SerialStringWrite">
+                <io:PortName>ArduinoSerial</io:PortName>
+                <io:NewLine>\r</io:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>SerialToSend</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Skip">
+                <rx:Count>1</rx:Count>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:SerialStringWrite">
+                <io:PortName>ArduinoSerial</io:PortName>
+                <io:NewLine>\r</io:NewLine>
+              </Combinator>
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="1" To="2" Label="Source1" />
             <Edge From="2" To="3" Label="Source1" />
-            <Edge From="3" To="7" Label="Source1" />
-            <Edge From="4" To="5" Label="Source2" />
-            <Edge From="4" To="7" Label="Source2" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
             <Edge From="5" To="6" Label="Source1" />
+            <Edge From="5" To="7" Label="Source1" />
+            <Edge From="5" To="10" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
+            <Edge From="20" To="21" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>

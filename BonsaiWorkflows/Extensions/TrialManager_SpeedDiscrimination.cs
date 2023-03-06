@@ -134,8 +134,9 @@ public class TrialManager_SpeedDiscrimination
             rightInARow.Add(rightFaster);
             if (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
 
-            Console.WriteLine("StandardSpeed=" + standardSpeed + ", SpeedDiff=" + speedDiff + ", rightFaster?" + rightFaster);
 
+            Console.WriteLine("StandardSpeed=" + standardSpeed + ", SpeedDiff=" + speedDiff + ", rightFaster?" + rightFaster);
+            
 
             ///////////////////// GENERATE OUTPUTS ////////////////
             var otherInfo = new Tuple<int, int, int, int>(standardSpeedIndex, speedDifferenceIndex, rightFaster, nSpeedDiffs);
