@@ -103,6 +103,7 @@ public class TrialManager_SpeedDiscrimination
                 totalNorm = totalNorm + (nl+nr)*SpeedDifferenceList[standardSpeedIndex][speedDifferenceIndex]; // normalisation factor depends on how big speed difference is.
             }
             bias = bias / totalNorm; // bias is normalised to be between 0 and 1
+            Console.WriteLine("bias = " + bias);
             pRight = 0.5f - (bias*biasScaling); // alter p(right) using calculated bias
             // ensure pRight doesn't go outside acceptable range
             if (pRight < minPRight) { pRight = minPRight; }
@@ -132,10 +133,10 @@ public class TrialManager_SpeedDiscrimination
 
             // add right faster, remove first element from list if needed
             rightInARow.Add(rightFaster);
-            if (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
+            while (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
 
 
-            Console.WriteLine("StandardSpeed=" + standardSpeed + ", SpeedDiff=" + speedDiff + ", rightFaster?" + rightFaster);
+            //Console.WriteLine("StandardSpeed=" + standardSpeed + ", SpeedDiff=" + speedDiff + ", rightFaster?" + rightFaster);
             
 
             ///////////////////// GENERATE OUTPUTS ////////////////

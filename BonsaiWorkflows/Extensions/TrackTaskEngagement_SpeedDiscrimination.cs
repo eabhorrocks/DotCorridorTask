@@ -18,7 +18,7 @@ public class TrackTaskEngagement_SpeedDiscrimination
         return source.Select(value => 
         {
             trialResponses.Add((int)value);
-            if (trialResponses.Count > maxListLength)
+            while (trialResponses.Count > maxListLength)
             { 
                 trialResponses.RemoveAt(0); 
             }
