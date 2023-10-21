@@ -27,7 +27,7 @@ public class TrackTaskEngagement_SpeedDiscrimination
 
             // calculate fraction of trials the mouse has responded to
             double pEngaged = (double)1 - ((double)count/(double)maxListLength);
-            Console.WriteLine("Engagement N" + trialResponses.Count + "nDis" + count + "pEng" + pEngaged);
+            //Console.WriteLine("Engagement N" + trialResponses.Count + "nDis" + count + "pEng" + pEngaged);
 
 
             // if below the threshold, set output to true and reset the list, otherwise set output as false
