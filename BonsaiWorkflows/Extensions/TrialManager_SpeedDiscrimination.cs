@@ -58,9 +58,7 @@ public class TrialManager_SpeedDiscrimination
             if (itrial==1)
             {
                 rightInARow = new List<int>();
-                // rightInARow
             }
-            //Console.WriteLine(itrial);
             
 
             //////////// PICK STANDARD SPEED TO TEST //////////
@@ -90,37 +88,41 @@ public class TrialManager_SpeedDiscrimination
                     break;
                 }
             }
+            // Use speed difference to specify the speed that isn't the standard speed
             //jndSpeed = standardSpeed + (speedDiff * standardSpeed); 
-            jndSpeed = standardSpeed * speedDiff;
+            jndSpeed = standardSpeed * speedDiff; 
 
 
-            ////////// PICK WHETHER LEFT OR RIGHT SPEED IS FASTER /////////
+            ////////// OPTIONALLY CALCULATE BIAS /////////
             pRight = pRightManual; // assign manual by default, override if using autobias
+            
             if (autoBias) // optional bias correction
 
-            // calculate bias for this standard speed by looping through difference speed difference results
+            // calculate bias looping through all standard speeds and speed diffs
             { 
                 for (int ispeed=0; ispeed<nSpeeds; ispeed++) // loop through standard speeds 
                 {
                     nSpeedDiffs = SpeedDifferenceList[ispeed].Count(); 
-                    for (int ispeedDiff=0; ispeedDiff<nSpeedDiffs; ispeedDiff++)
+
+                    for (int ispeedDiff=0; ispeedDiff<nSpeedDiffs; ispeedDiff++) // loop through speed diffs
                     {   // here 1st [] indexes into perf track list for the mean speed, [speedDifferenceIndex] is speed diff index, [0:3] are the int array indexes
                     float nr = PerfTrackList[ispeed][ispeedDiff][0] + 1; // # right trials
                     float cr = PerfTrackList[ispeed][ispeedDiff][1] + 1; // # correct right trials
                     float nl = PerfTrackList[ispeed][ispeedDiff][2] + 1; // # left trials
                     float cl = PerfTrackList[ispeed][ispeedDiff][3] + 1; // # correct left trials
                     
-                    // this speed difference contribution to bias is diff in proportion correct, weighted by speed difference, weighted by total trials for this difference.
-                    // p(inc|right) - p(inc|left) --{L bias if high, R bias if low}
+                    // this speed difference contribution to bias is diff in proportion incorrect, 
+                    // weighted by speed difference x trial count 
+                    // bias = p(inc|right) - p(inc|left) }--L bias if high, R bias if low
                     bias = bias + (((float)(1-cr/nr) - (float)(1-cl/nl)) * SpeedDifferenceList[ispeed][ispeedDiff] * (nl+nr));
                     totalNorm = totalNorm + (nl+nr)*SpeedDifferenceList[ispeed][ispeedDiff]; // normalisation factor depends on how big speed difference is.
                     }
                 }
-                Console.WriteLine("orig bias " + bias + " orig norm" + totalNorm );
+                //Console.WriteLine("orig bias " + bias + " orig norm" + totalNorm );
                 bias = bias / totalNorm; // bias is normalised to be between -1 and 1
-                Console.WriteLine("norm bias " + bias);
+                //Console.WriteLine("norm bias " + bias);
                 bias = bias / 2f; // rescale to between -.5 and .5
-                Console.WriteLine(".5scale bias  = " + bias);
+                //Console.WriteLine(".5scale bias  = " + bias);
                 pRight = 0.5f + (bias*biasScaling); // alter p(right) using calculated bias
                 
                 // ensure pRight doesn't go outside acceptable range
@@ -133,6 +135,7 @@ public class TrialManager_SpeedDiscrimination
             // if first trials/error, revert to manual setting
             if (Single.IsNaN(pRight)) {pRight = pRightManual;}
             
+            /////////////////// SPECIFY LEFT AND RIGHT SPEEDS ///////////////////
             // now use random number to choose whether left or right is faster
             float biasrnd = (float)rng.NextDouble(); // random number for left / right faster
 
