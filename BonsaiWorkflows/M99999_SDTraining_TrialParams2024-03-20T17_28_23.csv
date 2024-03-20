@@ -1,0 +1,18 @@
+StartSession,17:28:23.0475904
+{TrialType=3, Response=0, TrialResult=3, LeftVel=16, RightVel=128},17:28:35.9893632
+{TrialType=3, Response=0, TrialResult=3, LeftVel=256, RightVel=32},17:28:44.2975360
+{TrialType=3, Response=0, TrialResult=3, LeftVel=512, RightVel=64},17:28:52.1824000
+{TrialType=4, Response=0, TrialResult=3, LeftVel=128, RightVel=16},17:29:00.8732160
+{TrialType=4, Response=0, TrialResult=3, LeftVel=8, RightVel=64},17:29:08.9143936
+{TrialType=4, Response=0, TrialResult=3, LeftVel=256, RightVel=32},17:29:17.4543616
+{TrialType=4, Response=0, TrialResult=3, LeftVel=1024, RightVel=128},17:29:26.0638720
+{TrialType=4, Response=0, TrialResult=3, LeftVel=64, RightVel=512},17:29:33.9859456
+{TrialType=4, Response=0, TrialResult=3, LeftVel=1024, RightVel=128},17:29:42.6366208
+{TrialType=4, Response=0, TrialResult=3, LeftVel=2, RightVel=16},17:29:51.2996736
+{TrialType=4, Response=0, TrialResult=3, LeftVel=32, RightVel=4},17:29:59.3046272
+{TrialType=4, Response=0, TrialResult=3, LeftVel=32, RightVel=4},17:30:07.7290496
+{TrialType=4, Response=0, TrialResult=3, LeftVel=64, RightVel=512},17:30:16.1138176
+{TrialType=4, Response=0, TrialResult=3, LeftVel=64, RightVel=512},17:30:23.9189632
+{TrialType=4, Response=0, TrialResult=3, LeftVel=256, RightVel=32},17:30:32.2116224
+{TrialType=4, Response=0, TrialResult=3, LeftVel=32, RightVel=4},17:30:40.2193920
+{TrialType=4, Response=0, TrialResult=3, LeftVel=8, RightVel=64},17:30:48.8905344
