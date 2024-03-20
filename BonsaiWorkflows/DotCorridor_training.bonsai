@@ -8122,16 +8122,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="p1:TrackTaskEngagement_SpeedDiscrimination">
-                      <p1:trialResponses>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                      </p1:trialResponses>
+                      <p1:trialResponses />
                       <p1:maxListLength>20</p1:maxListLength>
                       <p1:pEngagedThreshold>0.1</p1:pEngagedThreshold>
                     </Combinator>
@@ -8632,17 +8623,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:AddToFloatList">
-                <p1:theList>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                </p1:theList>
+                <p1:theList />
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -11150,6 +11131,11 @@ def process(value):
                 <ffmpeg:OutputArguments>-vb 15M -vcodec mpeg4 </ffmpeg:OutputArguments>
               </Combinator>
             </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="cv:Flip">
+                <cv:Mode>Both</cv:Mode>
+              </Combinator>
+            </Expression>
             <Expression xsi:type="MemberSelector">
               <Selector>ElementType</Selector>
             </Expression>
@@ -11188,13 +11174,14 @@ def process(value):
             <Edge From="2" To="3" Label="Source1" />
             <Edge From="3" To="4" Label="Source2" />
             <Edge From="4" To="5" Label="Source1" />
-            <Edge From="4" To="9" Label="Source1" />
-            <Edge From="4" To="10" Label="Source1" />
-            <Edge From="4" To="11" Label="Source1" />
-            <Edge From="4" To="12" Label="Source1" />
             <Edge From="5" To="6" Label="Source1" />
+            <Edge From="5" To="10" Label="Source1" />
+            <Edge From="5" To="11" Label="Source1" />
+            <Edge From="5" To="12" Label="Source1" />
+            <Edge From="5" To="13" Label="Source1" />
             <Edge From="6" To="7" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
