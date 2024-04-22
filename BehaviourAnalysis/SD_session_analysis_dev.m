@@ -51,7 +51,7 @@ end
 
 % overlay plots
 figure(99)
-subplot(121), hold on
+subplot(211), hold on
 bar(1:5, nTrials)
 bar(1:5, nEngaged)
 bar(1:5, nCorrect)
@@ -83,7 +83,7 @@ for ipair = 1:size(speedPairs,1)
 
 end
 
-figure(99), subplot(122), hold on
+figure(99), subplot(212), hold on
 bar(n_speedPair)
 bar(nCorr_speedPair)
 ax=gca; ax.XTick=1:size(speedPairs,1);
