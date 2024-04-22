@@ -53,7 +53,6 @@ plotSDActiveTrials(trial, [subj ' ' seshDate], saveflag)
 scrollPlotHandle = plotSessionAsSeries(events, params, trial, wheel, licks, 1); % saveflag
 
 
-
 %% GLM
 % binofit to get CIs for simulated responses to stimuli.
 [b, dev, stats, modelPerf, absSD, ten, ten2, resVec, yfit, yfit2] = SDGLM(trial);
