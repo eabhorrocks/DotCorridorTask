@@ -65,12 +65,12 @@ public class TrialManager_SpeedDiscrimination
             int randomStandardSpeed = rng.Next(101); // random number between 1 and 100
             for (int i=0; i<nSpeeds; i++) // loop through standard speeds 
             {
-                float sum = StandardSpeedsProbList.Take(i+1).Sum(); // take cumulative sum of standardSpeed probs up to this one
+                float sum = StandardSpeedsProbList.Take(i+1).Sum(); // take cumulative sum of i+1 elements in standardSpeed probs 
                 if (randomStandardSpeed <= sum) // if the sum is more than the random number, choose it
                 {
-                    standardSpeedIndex = i; // index of the stajdard speed to be tested
+                    standardSpeedIndex = i; // index of the standard speed to be tested
                     nSpeedDiffs = SpeedDifferenceList[standardSpeedIndex].Count(); // number of possible speed ratios for this speed
-                    standardSpeed = StandardSpeedsList[standardSpeedIndex];
+                    standardSpeed = StandardSpeedsList[standardSpeedIndex]; // the standard speed for this trial
                     break;
                 }
             }
@@ -91,6 +91,7 @@ public class TrialManager_SpeedDiscrimination
             // Use speed difference to specify the speed that isn't the standard speed
             //jndSpeed = standardSpeed + (speedDiff * standardSpeed); 
             jndSpeed = standardSpeed * speedDiff; 
+
 
 
             ////////// OPTIONALLY CALCULATE BIAS /////////
@@ -156,7 +157,7 @@ public class TrialManager_SpeedDiscrimination
             else {speeds = new Tuple<double,double>(standardSpeed, jndSpeed);}
             }
 
-            // add right faster, remove first element from list if needed
+            // add right faster, remove first elements from list if needed
             rightInARow.Add(rightFaster);
             while (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
 
