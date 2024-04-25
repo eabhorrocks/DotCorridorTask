@@ -127,9 +127,10 @@ end
 for itrial = 1:numel(trial)
     startTime = trial(itrial).onTime-1000;
     stopTime = startTime+trial(itrial).respWinOpen+trial(itrial).respSize+2000;
+
     trial(itrial).licksL = licks.lickTimeL(licks.lickTimeL < stopTime & licks.lickTimeL > startTime)-trial(itrial).onTime;
     trial(itrial).licksR = licks.lickTimeR(licks.lickTimeR < stopTime & licks.lickTimeR > startTime)-trial(itrial).onTime;
-    
+
     trial(itrial).firstLick=nan;
     if ~isempty([trial(itrial).licksL]) && isempty([trial(itrial).licksR])
         trial(itrial).firstLick = -1;
