@@ -1,11 +1,16 @@
 %% Speed discrimination training session analysis (DEVELOPMENT)
+clc, clear % necessary for now
+
+addpath(genpath('C:\Users\edward.horrocks\Documents\Code\GenericFunctions'));
+addpath(genpath('C:\Users\edward.horrocks\Documents\Code\AnimalBehaviouralTasks\DotCorridorTask\BehaviourAnalysis'));
+
 
 serverDir='Z:\ibn-vision\DATA\SUBJECTS\';
 timeStamp2Use = 'ArduinoTime'; % 'ArduinoTime', 'BonsaiTime', [in any case should be ms] ?{or 'SyncPulse'}
 
 %% Session details
-Subject = 'M24020';
-Session = '20240423';
+Subject = 'M24019';
+Session = '20240430';
 
 sessionDir = fullfile(serverDir, Subject, 'Training', Session);
 
@@ -58,6 +63,11 @@ ax.XTickLabel = {'manual', 'passive','active-any','active-noabort','active'};
 ylabel('Trial count')
 legend({'Presented','Engaged','nCorrect'},'location','northwest')
 defaultAxesProperties(gca, false)
+grid on
+
+totalEngaged = sum(nEngaged(3:end))
+totalCorrect = sum(nCorrect(3:end))
+pCorrect = totalCorrect/totalEngaged
 
 %% engagement for each speed combination
 
@@ -78,21 +88,23 @@ for ipair = 1:size(speedPairs,1)
         [allTrials.type]>=2); % active, engaged trials
     n_speedPair_all(ipair) = numel(tempTrials);
     nEng_speedPair(ipair) = sum([tempTrials.engaged]);
+    pEng_speedPair(ipair) = nEng_speedPair(ipair)/n_speedPair_all(ipair);
 
 end
 
 subplot(312), hold on
-bar(n_speedPair_all)
+b = bar(n_speedPair_all);
 bar(nEng_speedPair)
 ax=gca; ax.XTick=1:size(speedPairs,1);
 for ipair = 1:size(speedPairs,1)
     ax.XTickLabel(ipair) = {[num2str(speedPairs(ipair,1)),'x',num2str(speedPairs(ipair,2))]};
+    text(b.XData(ipair), b.YData(ipair)+5,num2str(pEng_speedPair(ipair),2),'HorizontalAlignment','center')
 end
 ylabel('Trial count')
 xlabel('Left Vel x Right Vel')
 legend({'presented', 'engaged'})
 defaultAxesProperties(gca, false)
-
+grid on
 
 %% performance for each speed combination
 
@@ -113,21 +125,24 @@ for ipair = 1:size(speedPairs,1)
         [allTrials.type]>=2 & [allTrials.engaged]==1); % active, engaged trials
     n_speedPair(ipair) = numel(tempTrials);
     nCorr_speedPair(ipair) = sum([tempTrials.correct]);
+    pCorr_speedPair(ipair) = nCorr_speedPair(ipair)/n_speedPair(ipair);
 
 end
 
 subplot(313), hold on
-bar(n_speedPair)
+b = bar(n_speedPair);
 bar(nCorr_speedPair)
 ax=gca; ax.XTick=1:size(speedPairs,1);
 for ipair = 1:size(speedPairs,1)
     ax.XTickLabel(ipair) = {[num2str(speedPairs(ipair,1)),'x',num2str(speedPairs(ipair,2))]};
+    text(b.XData(ipair), b.YData(ipair)+5,num2str(pCorr_speedPair(ipair),2),'HorizontalAlignment','center')
+
 end
 ylabel('Trial count')
 xlabel('Left Vel x Right Vel')
 legend({'engaged, active trials', 'correct trials'})
 defaultAxesProperties(gca, false)
-
+grid on
 
 %% imagesc plot of p(right)
 
