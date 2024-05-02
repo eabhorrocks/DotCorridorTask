@@ -177,21 +177,28 @@ end
 
 
 %% process manual rewards for trials
+try
 mr = events.rewards.mrrewardsTimes;
 ml = events.rewards.mlrewardsTimes;
 mrews = sort([mr; ml]);
 for itrial = 1:numel(trial)
+    % default is no manual reward
+    trial(itrial).manualReward = 0;
+    trial(itrial).manualRewardTime = nan;
     [~,~,mRewAbsTime,mRewRelTime] = findNextEvent(mrews, trial(itrial).onTime);
+    
+    if ~isempty(mRewAbsTime) % if there is a manual reward 
     if (mRewAbsTime < trial(itrial).onTime+trial(itrial).respWinClosed) && ...
-            (mRewRelTime > -2000)
+            (mRewRelTime > -2000) % if it happens before resp win closed
         trial(itrial).manualReward = 1;
         trial(itrial).manualRewardTime = mRewRelTime;
         trial(itrial).type=0; % manual
-    else
-        trial(itrial).manualReward = 0;
-        trial(itrial).manualRewardTime = nan;
+    end
     end
     clear mRewAbsTime mRewRelTime
+end
+catch
+debug=1;
 end
 
 %% 
