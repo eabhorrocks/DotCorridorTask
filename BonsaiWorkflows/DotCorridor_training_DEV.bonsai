@@ -769,7 +769,7 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
               <Height>19.5</Height>
               <Rotation>
                 <X>0</X>
-                <Y>0</Y>
+                <Y>60.000001669652114</Y>
                 <Z>0</Z>
               </Rotation>
               <Translation>
@@ -845,7 +845,7 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
               <Height>19.5</Height>
               <Rotation>
                 <X>0</X>
-                <Y>0</Y>
+                <Y>-60.000001669652114</Y>
                 <Z>0</Z>
               </Rotation>
               <Translation>
@@ -1467,268 +1467,270 @@ Item4.Item2 as transXR)</scr:Expression>
                         <p1:float>128</p1:float>
                       </p1:StandardSpeedsList>
                       <p1:StandardSpeedsProbList>
-                        <p1:float>40</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
                       </p1:StandardSpeedsProbList>
                       <p1:SpeedDifferenceList>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceList>
                       <p1:SpeedDifferenceProbList>
                         <p1:ArrayOfFloat>
-                          <p1:float>80</p1:float>
-                          <p1:float>0</p1:float>
                           <p1:float>20</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>10</p1:float>
+                          <p1:float>10</p1:float>
                           <p1:float>0</p1:float>
                           <p1:float>0</p1:float>
-                          <p1:float>0</p1:float>
-                          <p1:float>0</p1:float>
+                          <p1:float>40</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
-                          <p1:float>35</p1:float>
-                          <p1:float>35</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
                           <p1:float>15</p1:float>
                           <p1:float>15</p1:float>
-                          <p1:float>0</p1:float>
+                          <p1:float>10</p1:float>
+                          <p1:float>10</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
+                          <p1:float>25</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>10</p1:float>
+                          <p1:float>10</p1:float>
                           <p1:float>0</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>30</p1:float>
-                          <p1:float>30</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>10</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
                           <p1:float>25</p1:float>
                           <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>0</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>10</p1:float>
+                          <p1:float>10</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceProbList>
                       <p1:PerfTrackList>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                        </p1:ArrayOfArrayOfInt>
-                        <p1:ArrayOfArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                          </p1:ArrayOfInt>
-                          <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                         <p1:ArrayOfArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                           <p1:ArrayOfInt>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
-                            <p1:int>0</p1:int>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                        </p1:ArrayOfArrayOfInt>
+                        <p1:ArrayOfArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
+                          </p1:ArrayOfInt>
+                          <p1:ArrayOfInt>
+                            <p1:int>52</p1:int>
+                            <p1:int>35</p1:int>
+                            <p1:int>43</p1:int>
+                            <p1:int>30</p1:int>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                       </p1:PerfTrackList>
-                      <p1:itrial>1</p1:itrial>
+                      <p1:itrial>329</p1:itrial>
                       <p1:rightInARow>
-                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>3</p1:maxInARow>
                       <p1:autoBias>false</p1:autoBias>
@@ -1860,7 +1862,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>32</Value>
+                                        <Value>64</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1890,7 +1892,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>128</Value>
+                                        <Value>32</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -2079,7 +2081,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2133,7 +2135,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -2224,7 +2226,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>0</gl:X>
                                                     <gl:Y>0</gl:Y>
                                                     <gl:Z>0</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -2355,7 +2357,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2544,7 +2546,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2595,7 +2597,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -2686,7 +2688,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>1</gl:X>
                                                     <gl:Y>1</gl:Y>
                                                     <gl:Z>1</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -2768,7 +2770,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2952,7 +2954,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3003,7 +3005,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -3094,7 +3096,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>1</gl:X>
                                                     <gl:Y>1</gl:Y>
                                                     <gl:Z>1</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -3176,7 +3178,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3349,7 +3351,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-0.533333361</Value>
+                                                    <Value>-1.06666672</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3403,7 +3405,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -3494,7 +3496,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>0</gl:X>
                                                     <gl:Y>0</gl:Y>
                                                     <gl:Z>0</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -3582,7 +3584,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
+                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3891,7 +3893,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3945,7 +3947,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -4036,7 +4038,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>0</gl:X>
                                                     <gl:Y>0</gl:Y>
                                                     <gl:Z>0</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -4124,7 +4126,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -4307,7 +4309,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4358,7 +4360,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -4449,7 +4451,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>1</gl:X>
                                                     <gl:Y>1</gl:Y>
                                                     <gl:Z>1</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -4531,7 +4533,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -4715,7 +4717,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4766,7 +4768,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -4857,7 +4859,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>1</gl:X>
                                                     <gl:Y>1</gl:Y>
                                                     <gl:Z>1</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -4939,7 +4941,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -5112,7 +5114,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-2.13333344</Value>
+                                                    <Value>-0.533333361</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -5166,7 +5168,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>1</Value>
+                                                    <Value>0</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="PropertyMapping">
@@ -5257,7 +5259,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                     <gl:X>0</gl:X>
                                                     <gl:Y>0</gl:Y>
                                                     <gl:Z>0</gl:Z>
-                                                    <gl:W>1</gl:W>
+                                                    <gl:W>0</gl:W>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
@@ -5345,7 +5347,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
+                                                    <p1:VelocityX>-0.533333361</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -5725,7 +5727,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="rx:Timer">
-                                  <rx:DueTime>PT0.7S</rx:DueTime>
+                                  <rx:DueTime>PT0.5S</rx:DueTime>
                                   <rx:Period>PT0S</rx:Period>
                                 </Combinator>
                               </Expression>
@@ -6872,7 +6874,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           </Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Timer">
-                                              <rx:DueTime>PT5S</rx:DueTime>
+                                              <rx:DueTime>PT1S</rx:DueTime>
                                               <rx:Period>PT0S</rx:Period>
                                             </Combinator>
                                           </Expression>
@@ -6929,178 +6931,178 @@ Item4.Item2 as transXR)</scr:Expression>
                                               <p1:perfTracking>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                </p1:ArrayOfArrayOfInt>
-                                                <p1:ArrayOfArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                  </p1:ArrayOfInt>
-                                                  <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                                 <p1:ArrayOfArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                   <p1:ArrayOfInt>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
-                                                    <p1:int>0</p1:int>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                </p1:ArrayOfArrayOfInt>
+                                                <p1:ArrayOfArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
+                                                  </p1:ArrayOfInt>
+                                                  <p1:ArrayOfInt>
+                                                    <p1:int>52</p1:int>
+                                                    <p1:int>35</p1:int>
+                                                    <p1:int>43</p1:int>
+                                                    <p1:int>30</p1:int>
                                                   </p1:ArrayOfInt>
                                                 </p1:ArrayOfArrayOfInt>
                                               </p1:perfTracking>
@@ -7938,7 +7940,7 @@ Item4.Item2 as transXR)</scr:Expression>
                         <Expression xsi:type="Unit" />
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="gl:Delay">
-                            <gl:DueTime>PT2.855S</gl:DueTime>
+                            <gl:DueTime>PT2.995S</gl:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="MulticastSubject">
@@ -8039,7 +8041,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="GreaterThan">
                                 <Operand xsi:type="DoubleProperty">
-                                  <Value>1</Value>
+                                  <Value>0</Value>
                                 </Operand>
                               </Expression>
                               <Expression xsi:type="WorkflowOutput" />
@@ -8164,7 +8166,7 @@ Item4.Item2 as transXR)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="gl:Timer">
-                                  <gl:DueTime>PT3S</gl:DueTime>
+                                  <gl:DueTime>PT1S</gl:DueTime>
                                 </Combinator>
                               </Expression>
                               <Expression xsi:type="Unit" />
@@ -8519,7 +8521,337 @@ Item4.Item2 as transXR)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="p1:TrackTaskEngagement_SpeedDiscrimination">
-                      <p1:trialResponses />
+                      <p1:trialResponses>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>0</p1:int>
+                        <p1:int>-1</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                        <p1:int>3</p1:int>
+                      </p1:trialResponses>
                       <p1:maxListLength>500</p1:maxListLength>
                       <p1:pEngagedThreshold>0</p1:pEngagedThreshold>
                     </Combinator>
@@ -8682,7 +9014,7 @@ Item4.Item2 as transXR)</scr:Expression>
                     <Property Name="FileName" DisplayName="MetadataFileToLoad" />
                   </Expression>
                   <Expression xsi:type="io:CsvReader">
-                    <io:FileName>Stimuli_240424.csv</io:FileName>
+                    <io:FileName>Stimuli_230424.csv</io:FileName>
                     <io:ListSeparator>,</io:ListSeparator>
                     <io:ScanPattern>%f</io:ScanPattern>
                     <io:SkipRows>0</io:SkipRows>
@@ -9021,7 +9353,335 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:AddToFloatList">
                 <p1:theList>
+                  <p1:float>30.87793</p1:float>
+                  <p1:float>30.0670929</p1:float>
+                  <p1:float>27.7296</p1:float>
+                  <p1:float>30.3909264</p1:float>
+                  <p1:float>30.0500126</p1:float>
+                  <p1:float>28.7492485</p1:float>
+                  <p1:float>28.6147289</p1:float>
+                  <p1:float>29.8202076</p1:float>
+                  <p1:float>27.4222088</p1:float>
+                  <p1:float>26.2553024</p1:float>
+                  <p1:float>21.4030819</p1:float>
+                  <p1:float>28.5308571</p1:float>
+                  <p1:float>24.66475</p1:float>
+                  <p1:float>23.5801029</p1:float>
+                  <p1:float>19.3016567</p1:float>
+                  <p1:float>22.15909</p1:float>
+                  <p1:float>20.9821262</p1:float>
+                  <p1:float>20.2649727</p1:float>
+                  <p1:float>19.2193375</p1:float>
+                  <p1:float>16.8869934</p1:float>
+                  <p1:float>23.8266277</p1:float>
+                  <p1:float>27.77701</p1:float>
+                  <p1:float>25.9413376</p1:float>
+                  <p1:float>26.912178</p1:float>
+                  <p1:float>25.8215065</p1:float>
+                  <p1:float>25.5531139</p1:float>
+                  <p1:float>16.9548759</p1:float>
+                  <p1:float>29.938364</p1:float>
+                  <p1:float>24.0115681</p1:float>
+                  <p1:float>28.9468861</p1:float>
+                  <p1:float>26.3797073</p1:float>
+                  <p1:float>14.22537</p1:float>
+                  <p1:float>23.4794178</p1:float>
+                  <p1:float>20.7145462</p1:float>
+                  <p1:float>23.43889</p1:float>
+                  <p1:float>26.9587669</p1:float>
+                  <p1:float>-3993.92</p1:float>
+                  <p1:float>25.7324238</p1:float>
+                  <p1:float>27.5122662</p1:float>
+                  <p1:float>22.4822178</p1:float>
+                  <p1:float>18.1311359</p1:float>
+                  <p1:float>14.599618</p1:float>
+                  <p1:float>26.4009914</p1:float>
+                  <p1:float>31.8620453</p1:float>
+                  <p1:float>28.8836174</p1:float>
+                  <p1:float>31.8770943</p1:float>
+                  <p1:float>29.5640736</p1:float>
+                  <p1:float>28.7043285</p1:float>
+                  <p1:float>29.1003342</p1:float>
+                  <p1:float>31.5679455</p1:float>
+                  <p1:float>27.8208656</p1:float>
+                  <p1:float>33.32155</p1:float>
+                  <p1:float>28.58292</p1:float>
+                  <p1:float>23.3450146</p1:float>
+                  <p1:float>23.3646011</p1:float>
+                  <p1:float>27.7256451</p1:float>
+                  <p1:float>24.029789</p1:float>
+                  <p1:float>28.78993</p1:float>
+                  <p1:float>30.3104076</p1:float>
+                  <p1:float>26.7831421</p1:float>
+                  <p1:float>28.3046112</p1:float>
+                  <p1:float>26.07833</p1:float>
+                  <p1:float>25.31875</p1:float>
+                  <p1:float>25.9818649</p1:float>
+                  <p1:float>23.4997845</p1:float>
+                  <p1:float>22.8514977</p1:float>
+                  <p1:float>24.7260284</p1:float>
+                  <p1:float>28.3309841</p1:float>
+                  <p1:float>23.9769421</p1:float>
+                  <p1:float>26.5663738</p1:float>
+                  <p1:float>24.4542446</p1:float>
+                  <p1:float>27.3888531</p1:float>
+                  <p1:float>30.7238846</p1:float>
+                  <p1:float>25.7100735</p1:float>
+                  <p1:float>30.26829</p1:float>
+                  <p1:float>26.1988621</p1:float>
+                  <p1:float>29.023201</p1:float>
+                  <p1:float>26.3496246</p1:float>
+                  <p1:float>28.00603</p1:float>
+                  <p1:float>25.8991089</p1:float>
+                  <p1:float>28.04406</p1:float>
+                  <p1:float>24.1713257</p1:float>
+                  <p1:float>26.1436348</p1:float>
+                  <p1:float>29.0087585</p1:float>
+                  <p1:float>29.4857082</p1:float>
+                  <p1:float>28.2572021</p1:float>
+                  <p1:float>26.3926716</p1:float>
+                  <p1:float>27.27029</p1:float>
+                  <p1:float>24.8789463</p1:float>
+                  <p1:float>29.07651</p1:float>
+                  <p1:float>27.2970886</p1:float>
+                  <p1:float>29.6799526</p1:float>
+                  <p1:float>27.8487873</p1:float>
+                  <p1:float>29.1024132</p1:float>
+                  <p1:float>25.85351</p1:float>
+                  <p1:float>28.42187</p1:float>
+                  <p1:float>26.0074348</p1:float>
+                  <p1:float>28.5383739</p1:float>
+                  <p1:float>27.4031219</p1:float>
+                  <p1:float>25.4970665</p1:float>
+                  <p1:float>28.941143</p1:float>
+                  <p1:float>26.8047886</p1:float>
+                  <p1:float>27.6573811</p1:float>
+                  <p1:float>28.30662</p1:float>
+                  <p1:float>27.6378365</p1:float>
+                  <p1:float>27.6099</p1:float>
+                  <p1:float>25.3522987</p1:float>
+                  <p1:float>26.96766</p1:float>
+                  <p1:float>25.0448055</p1:float>
+                  <p1:float>27.9497776</p1:float>
+                  <p1:float>28.078764</p1:float>
+                  <p1:float>27.0260124</p1:float>
+                  <p1:float>26.320055</p1:float>
+                  <p1:float>29.5983143</p1:float>
+                  <p1:float>28.7798862</p1:float>
+                  <p1:float>24.5321846</p1:float>
+                  <p1:float>25.1680775</p1:float>
+                  <p1:float>24.3479576</p1:float>
+                  <p1:float>25.3210716</p1:float>
+                  <p1:float>26.3877563</p1:float>
+                  <p1:float>24.79372</p1:float>
+                  <p1:float>29.3904457</p1:float>
+                  <p1:float>25.1813622</p1:float>
+                  <p1:float>30.559269</p1:float>
+                  <p1:float>22.21128</p1:float>
+                  <p1:float>29.8625488</p1:float>
+                  <p1:float>27.3264389</p1:float>
+                  <p1:float>27.6283817</p1:float>
+                  <p1:float>26.1061268</p1:float>
+                  <p1:float>29.0017223</p1:float>
+                  <p1:float>28.7188587</p1:float>
+                  <p1:float>25.1605949</p1:float>
+                  <p1:float>26.4949512</p1:float>
+                  <p1:float>25.7587166</p1:float>
+                  <p1:float>21.7436619</p1:float>
+                  <p1:float>25.4714241</p1:float>
+                  <p1:float>26.460495</p1:float>
+                  <p1:float>12.3114719</p1:float>
+                  <p1:float>27.445013</p1:float>
+                  <p1:float>31.3100719</p1:float>
+                  <p1:float>27.5628586</p1:float>
+                  <p1:float>21.54758</p1:float>
+                  <p1:float>30.2633877</p1:float>
+                  <p1:float>-1275.24146</p1:float>
+                  <p1:float>25.8806553</p1:float>
+                  <p1:float>22.687397</p1:float>
+                  <p1:float>20.1173763</p1:float>
+                  <p1:float>25.8270817</p1:float>
+                  <p1:float>26.9523354</p1:float>
+                  <p1:float>29.2026711</p1:float>
+                  <p1:float>22.03476</p1:float>
+                  <p1:float>26.3607063</p1:float>
+                  <p1:float>16.3954678</p1:float>
+                  <p1:float>18.6037025</p1:float>
+                  <p1:float>26.6366348</p1:float>
+                  <p1:float>25.3768749</p1:float>
+                  <p1:float>25.5342674</p1:float>
+                  <p1:float>28.8660564</p1:float>
+                  <p1:float>20.37341</p1:float>
+                  <p1:float>23.76435</p1:float>
+                  <p1:float>24.1900787</p1:float>
+                  <p1:float>19.5324383</p1:float>
+                  <p1:float>27.2231522</p1:float>
+                  <p1:float>-1273.204</p1:float>
+                  <p1:float>27.23474</p1:float>
+                  <p1:float>27.4956627</p1:float>
+                  <p1:float>26.02328</p1:float>
+                  <p1:float>28.4693565</p1:float>
+                  <p1:float>29.6050873</p1:float>
                   <p1:float>0</p1:float>
+                  <p1:float>0.07936205</p1:float>
+                  <p1:float>-0.03987453</p1:float>
+                  <p1:float>8.844574</p1:float>
+                  <p1:float>20.2938938</p1:float>
+                  <p1:float>17.8279247</p1:float>
+                  <p1:float>20.2716885</p1:float>
+                  <p1:float>31.1385345</p1:float>
+                  <p1:float>27.24424</p1:float>
+                  <p1:float>18.8342953</p1:float>
+                  <p1:float>0</p1:float>
+                  <p1:float>22.8547554</p1:float>
+                  <p1:float>26.8999176</p1:float>
+                  <p1:float>18.9659615</p1:float>
+                  <p1:float>19.0172119</p1:float>
+                  <p1:float>13.9324818</p1:float>
+                  <p1:float>17.1642437</p1:float>
+                  <p1:float>17.8900871</p1:float>
+                  <p1:float>9.749135</p1:float>
+                  <p1:float>29.5413227</p1:float>
+                  <p1:float>28.06941</p1:float>
+                  <p1:float>28.0626011</p1:float>
+                  <p1:float>28.7642937</p1:float>
+                  <p1:float>23.3322449</p1:float>
+                  <p1:float>16.4497623</p1:float>
+                  <p1:float>26.62643</p1:float>
+                  <p1:float>22.2464371</p1:float>
+                  <p1:float>27.53231</p1:float>
+                  <p1:float>12.554594</p1:float>
+                  <p1:float>25.3396778</p1:float>
+                  <p1:float>17.2888851</p1:float>
+                  <p1:float>26.93774</p1:float>
+                  <p1:float>28.214695</p1:float>
+                  <p1:float>28.4388561</p1:float>
+                  <p1:float>22.3695641</p1:float>
+                  <p1:float>27.4732227</p1:float>
+                  <p1:float>25.3350563</p1:float>
+                  <p1:float>26.6858559</p1:float>
+                  <p1:float>28.4773483</p1:float>
+                  <p1:float>24.7179775</p1:float>
+                  <p1:float>24.9933567</p1:float>
+                  <p1:float>23.4110374</p1:float>
+                  <p1:float>28.7246914</p1:float>
+                  <p1:float>27.6865044</p1:float>
+                  <p1:float>26.88627</p1:float>
+                  <p1:float>13.9605989</p1:float>
+                  <p1:float>24.4101086</p1:float>
+                  <p1:float>22.3510475</p1:float>
+                  <p1:float>14.4753876</p1:float>
+                  <p1:float>20.61564</p1:float>
+                  <p1:float>14.6388216</p1:float>
+                  <p1:float>23.0095749</p1:float>
+                  <p1:float>10.1512842</p1:float>
+                  <p1:float>14.623723</p1:float>
+                  <p1:float>7.794708</p1:float>
+                  <p1:float>5.51351738</p1:float>
+                  <p1:float>12.451602</p1:float>
+                  <p1:float>10.358655</p1:float>
+                  <p1:float>9.574085</p1:float>
+                  <p1:float>9.356272</p1:float>
+                  <p1:float>3.91800928</p1:float>
+                  <p1:float>19.3450565</p1:float>
+                  <p1:float>21.30544</p1:float>
+                  <p1:float>19.0636</p1:float>
+                  <p1:float>24.2405624</p1:float>
+                  <p1:float>11.056366</p1:float>
+                  <p1:float>22.4445248</p1:float>
+                  <p1:float>18.0184612</p1:float>
+                  <p1:float>25.8972874</p1:float>
+                  <p1:float>29.8403816</p1:float>
+                  <p1:float>26.0566616</p1:float>
+                  <p1:float>28.6204472</p1:float>
+                  <p1:float>26.710207</p1:float>
+                  <p1:float>29.0965443</p1:float>
+                  <p1:float>25.4769459</p1:float>
+                  <p1:float>28.8209534</p1:float>
+                  <p1:float>28.3015</p1:float>
+                  <p1:float>26.7330742</p1:float>
+                  <p1:float>24.132906</p1:float>
+                  <p1:float>23.1104946</p1:float>
+                  <p1:float>23.1171</p1:float>
+                  <p1:float>23.2421246</p1:float>
+                  <p1:float>24.3388538</p1:float>
+                  <p1:float>22.6765671</p1:float>
+                  <p1:float>11.5415163</p1:float>
+                  <p1:float>18.2237358</p1:float>
+                  <p1:float>15.4895744</p1:float>
+                  <p1:float>26.47812</p1:float>
+                  <p1:float>-1281.08911</p1:float>
+                  <p1:float>13.034399</p1:float>
+                  <p1:float>16.7431049</p1:float>
+                  <p1:float>12.83402</p1:float>
+                  <p1:float>11.2377033</p1:float>
+                  <p1:float>10.6049013</p1:float>
+                  <p1:float>13.8269835</p1:float>
+                  <p1:float>8.945678</p1:float>
+                  <p1:float>24.1447811</p1:float>
+                  <p1:float>11.8889971</p1:float>
+                  <p1:float>8.697224</p1:float>
+                  <p1:float>15.7366905</p1:float>
+                  <p1:float>12.26635</p1:float>
+                  <p1:float>14.9014778</p1:float>
+                  <p1:float>11.6833086</p1:float>
+                  <p1:float>20.6332111</p1:float>
+                  <p1:float>20.0667324</p1:float>
+                  <p1:float>13.0172253</p1:float>
+                  <p1:float>10.9693623</p1:float>
+                  <p1:float>28.8417511</p1:float>
+                  <p1:float>23.5324326</p1:float>
+                  <p1:float>9.44186</p1:float>
+                  <p1:float>17.30037</p1:float>
+                  <p1:float>11.5953836</p1:float>
+                  <p1:float>12.4385824</p1:float>
+                  <p1:float>18.9738579</p1:float>
+                  <p1:float>15.9571533</p1:float>
+                  <p1:float>17.6838646</p1:float>
+                  <p1:float>17.0284863</p1:float>
+                  <p1:float>13.781086</p1:float>
+                  <p1:float>18.9971027</p1:float>
+                  <p1:float>21.5965958</p1:float>
+                  <p1:float>16.8020744</p1:float>
+                  <p1:float>16.3266335</p1:float>
+                  <p1:float>-1287.86829</p1:float>
+                  <p1:float>18.6532745</p1:float>
+                  <p1:float>13.9947872</p1:float>
+                  <p1:float>15.3124552</p1:float>
+                  <p1:float>13.87173</p1:float>
+                  <p1:float>13.8426828</p1:float>
+                  <p1:float>15.5374384</p1:float>
+                  <p1:float>16.88921</p1:float>
+                  <p1:float>12.1654854</p1:float>
+                  <p1:float>14.4639978</p1:float>
+                  <p1:float>13.5547152</p1:float>
+                  <p1:float>12.7369213</p1:float>
+                  <p1:float>10.8322611</p1:float>
+                  <p1:float>10.881566</p1:float>
+                  <p1:float>12.2874975</p1:float>
+                  <p1:float>12.6088438</p1:float>
+                  <p1:float>12.7097254</p1:float>
+                  <p1:float>14.814908</p1:float>
+                  <p1:float>12.0816689</p1:float>
+                  <p1:float>13.3155622</p1:float>
+                  <p1:float>10.34001</p1:float>
+                  <p1:float>19.5513935</p1:float>
+                  <p1:float>10.75688</p1:float>
+                  <p1:float>23.31682</p1:float>
+                  <p1:float>17.2465973</p1:float>
+                  <p1:float>14.2686205</p1:float>
+                  <p1:float>12.750803</p1:float>
+                  <p1:float>8.799338</p1:float>
+                  <p1:float>8.592672</p1:float>
+                  <p1:float>5.56768</p1:float>
+                  <p1:float>9.300156</p1:float>
+                  <p1:float>9.967747</p1:float>
+                  <p1:float>12.4315348</p1:float>
+                  <p1:float>11.9943266</p1:float>
+                  <p1:float>13.3345423</p1:float>
+                  <p1:float>16.4706268</p1:float>
+                  <p1:float>19.6053944</p1:float>
+                  <p1:float>18.8193741</p1:float>
                 </p1:theList>
               </Combinator>
             </Expression>
@@ -11903,7 +12563,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Exposure</cv:Property>
-                    <cv:Value>-7</cv:Value>
+                    <cv:Value>-8</cv:Value>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Gain</cv:Property>
@@ -11982,10 +12642,10 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-                  <cv:X>1832</cv:X>
-                  <cv:Y>54</cv:Y>
-                  <cv:Width>136</cv:Width>
-                  <cv:Height>120</cv:Height>
+                  <cv:X>1885</cv:X>
+                  <cv:Y>81</cv:Y>
+                  <cv:Width>59</cv:Width>
+                  <cv:Height>47</cv:Height>
                 </cv:RegionOfInterest>
               </Combinator>
             </Expression>
@@ -12095,12 +12755,12 @@ Item4.Item2 as transXR)</scr:Expression>
         </PropertyMappings>
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-        <TranslationX>-26</TranslationX>
-        <TranslationY>-12</TranslationY>
-        <TranslationZ>-103.6</TranslationZ>
+        <TranslationX>-27</TranslationX>
+        <TranslationY>-14.5</TranslationY>
+        <TranslationZ>-102</TranslationZ>
         <ScaleX>10</ScaleX>
-        <ScaleY>20</ScaleY>
-        <ScaleZ>100</ScaleZ>
+        <ScaleY>10</ScaleY>
+        <ScaleZ>60</ScaleZ>
         <MeshName>cube3d</MeshName>
         <Ambient>
           <X>0</X>
@@ -12118,7 +12778,7 @@ Item4.Item2 as transXR)</scr:Expression>
           <Z>0</Z>
         </Specular>
         <SpecularExponent>0</SpecularExponent>
-        <RotationZ>0</RotationZ>
+        <RotationZ>110.482758</RotationZ>
         <RotationY>0</RotationY>
         <RotationX>0</RotationX>
       </Expression>

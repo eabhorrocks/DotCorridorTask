@@ -773,9 +773,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <Z>0</Z>
               </Rotation>
               <Translation>
-                <X>-13.5</X>
+                <X>-12</X>
                 <Y>0</Y>
-                <Z>-11</Z>
+                <Z>-9</Z>
               </Translation>
             </Expression>
             <Expression xsi:type="Disable">
@@ -813,7 +813,7 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
               <Translation>
                 <X>0</X>
                 <Y>0</Y>
-                <Z>-18.5</Z>
+                <Z>-15</Z>
               </Translation>
             </Expression>
             <Expression xsi:type="Disable">
@@ -849,9 +849,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <Z>0</Z>
               </Rotation>
               <Translation>
-                <X>13.5</X>
+                <X>12</X>
                 <Y>0</Y>
-                <Z>-11</Z>
+                <Z>-9</Z>
               </Translation>
             </Expression>
             <Expression xsi:type="Disable">
@@ -1467,84 +1467,84 @@ Item4.Item2 as transXR)</scr:Expression>
                         <p1:float>128</p1:float>
                       </p1:StandardSpeedsList>
                       <p1:StandardSpeedsProbList>
-                        <p1:float>40</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
-                        <p1:float>20</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
+                        <p1:float>25</p1:float>
                       </p1:StandardSpeedsProbList>
                       <p1:SpeedDifferenceList>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>32</p1:float>
                           <p1:float>0.125</p1:float>
                           <p1:float>8</p1:float>
                           <p1:float>0.25</p1:float>
                           <p1:float>4</p1:float>
                           <p1:float>0.5</p1:float>
                           <p1:float>2</p1:float>
+                          <p1:float>32</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceList>
                       <p1:SpeedDifferenceProbList>
                         <p1:ArrayOfFloat>
-                          <p1:float>80</p1:float>
+                          <p1:float>0</p1:float>
+                          <p1:float>20</p1:float>
                           <p1:float>0</p1:float>
                           <p1:float>20</p1:float>
                           <p1:float>0</p1:float>
                           <p1:float>0</p1:float>
-                          <p1:float>0</p1:float>
-                          <p1:float>0</p1:float>
+                          <p1:float>60</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
                           <p1:float>0</p1:float>
-                          <p1:float>35</p1:float>
-                          <p1:float>35</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>0</p1:float>
+                        </p1:ArrayOfFloat>
+                        <p1:ArrayOfFloat>
+                          <p1:float>20</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>15</p1:float>
                           <p1:float>15</p1:float>
                           <p1:float>15</p1:float>
                           <p1:float>0</p1:float>
-                          <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                         <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>30</p1:float>
-                          <p1:float>30</p1:float>
-                          <p1:float>10</p1:float>
-                          <p1:float>10</p1:float>
-                        </p1:ArrayOfFloat>
-                        <p1:ArrayOfFloat>
-                          <p1:float>0</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
-                          <p1:float>25</p1:float>
                           <p1:float>25</p1:float>
                           <p1:float>0</p1:float>
+                          <p1:float>20</p1:float>
+                          <p1:float>25</p1:float>
+                          <p1:float>15</p1:float>
+                          <p1:float>15</p1:float>
                           <p1:float>0</p1:float>
                         </p1:ArrayOfFloat>
                       </p1:SpeedDifferenceProbList>
@@ -1726,11 +1726,11 @@ Item4.Item2 as transXR)</scr:Expression>
                           </p1:ArrayOfInt>
                         </p1:ArrayOfArrayOfInt>
                       </p1:PerfTrackList>
-                      <p1:itrial>33</p1:itrial>
+                      <p1:itrial>11</p1:itrial>
                       <p1:rightInARow>
                         <p1:int>1</p1:int>
                         <p1:int>-1</p1:int>
-                        <p1:int>-1</p1:int>
+                        <p1:int>1</p1:int>
                       </p1:rightInARow>
                       <p1:maxInARow>3</p1:maxInARow>
                       <p1:autoBias>false</p1:autoBias>
@@ -1862,7 +1862,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>256</Value>
+                                        <Value>16</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1892,7 +1892,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="DoubleProperty">
-                                        <Value>64</Value>
+                                        <Value>128</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -2081,7 +2081,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-4.266667</Value>
+                                                    <Value>-0.266666681</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2357,7 +2357,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
+                                                    <p1:VelocityX>-0.266666681</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2546,7 +2546,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-4.266667</Value>
+                                                    <Value>-0.266666681</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -2770,7 +2770,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
+                                                    <p1:VelocityX>-0.266666681</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2954,7 +2954,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-4.266667</Value>
+                                                    <Value>-0.266666681</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3178,7 +3178,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
+                                                    <p1:VelocityX>-0.266666681</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3351,7 +3351,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-4.266667</Value>
+                                                    <Value>-0.266666681</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -3584,7 +3584,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-4.266667</p1:VelocityX>
+                                                    <p1:VelocityX>-0.266666681</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3893,7 +3893,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-1.06666672</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4126,7 +4126,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -4309,7 +4309,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-1.06666672</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4533,7 +4533,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -4717,7 +4717,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-1.06666672</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -4941,7 +4941,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -5114,7 +5114,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="FloatProperty">
-                                                    <Value>-1.06666672</Value>
+                                                    <Value>-2.13333344</Value>
                                                   </Combinator>
                                                 </Expression>
                                                 <Expression xsi:type="Disable">
@@ -5347,7 +5347,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="p1:moveDots_2dLife">
-                                                    <p1:VelocityX>-1.06666672</p1:VelocityX>
+                                                    <p1:VelocityX>-2.13333344</p1:VelocityX>
                                                     <p1:VelocityY>0</p1:VelocityY>
                                                     <p1:Coherence>100</p1:Coherence>
                                                     <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -7940,7 +7940,7 @@ Item4.Item2 as transXR)</scr:Expression>
                         <Expression xsi:type="Unit" />
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="gl:Delay">
-                            <gl:DueTime>PT2.341S</gl:DueTime>
+                            <gl:DueTime>PT2.903S</gl:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="MulticastSubject">
@@ -8532,28 +8532,6 @@ Item4.Item2 as transXR)</scr:Expression>
                         <p1:int>3</p1:int>
                         <p1:int>3</p1:int>
                         <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
-                        <p1:int>3</p1:int>
                       </p1:trialResponses>
                       <p1:maxListLength>500</p1:maxListLength>
                       <p1:pEngagedThreshold>0</p1:pEngagedThreshold>
@@ -8717,7 +8695,7 @@ Item4.Item2 as transXR)</scr:Expression>
                     <Property Name="FileName" DisplayName="MetadataFileToLoad" />
                   </Expression>
                   <Expression xsi:type="io:CsvReader">
-                    <io:FileName>Stimuli_240424.csv</io:FileName>
+                    <io:FileName>Stimuli_M24020_240503.csv</io:FileName>
                     <io:ListSeparator>,</io:ListSeparator>
                     <io:ScanPattern>%f</io:ScanPattern>
                     <io:SkipRows>0</io:SkipRows>
@@ -9056,29 +9034,6 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:AddToFloatList">
                 <p1:theList>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
-                  <p1:float>0</p1:float>
                   <p1:float>0</p1:float>
                   <p1:float>0</p1:float>
                   <p1:float>0</p1:float>
@@ -11970,7 +11925,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Exposure</cv:Property>
-                    <cv:Value>-7</cv:Value>
+                    <cv:Value>-9</cv:Value>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Gain</cv:Property>
@@ -12049,10 +12004,10 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-                  <cv:X>1832</cv:X>
-                  <cv:Y>54</cv:Y>
-                  <cv:Width>136</cv:Width>
-                  <cv:Height>120</cv:Height>
+                  <cv:X>1896</cv:X>
+                  <cv:Y>90</cv:Y>
+                  <cv:Width>56</cv:Width>
+                  <cv:Height>42</cv:Height>
                 </cv:RegionOfInterest>
               </Combinator>
             </Expression>
@@ -12162,17 +12117,17 @@ Item4.Item2 as transXR)</scr:Expression>
         </PropertyMappings>
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-        <TranslationX>-27</TranslationX>
-        <TranslationY>-14.5</TranslationY>
+        <TranslationX>-28</TranslationX>
+        <TranslationY>-16</TranslationY>
         <TranslationZ>-102</TranslationZ>
         <ScaleX>10</ScaleX>
         <ScaleY>10</ScaleY>
-        <ScaleZ>60</ScaleZ>
+        <ScaleZ>40</ScaleZ>
         <MeshName>cube3d</MeshName>
         <Ambient>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
+          <X>1</X>
+          <Y>1</Y>
+          <Z>1</Z>
         </Ambient>
         <Diffuse>
           <X>0</X>
@@ -12185,9 +12140,9 @@ Item4.Item2 as transXR)</scr:Expression>
           <Z>0</Z>
         </Specular>
         <SpecularExponent>0</SpecularExponent>
-        <RotationZ>110.482758</RotationZ>
-        <RotationY>0</RotationY>
-        <RotationX>0</RotationX>
+        <RotationZ>-71.16279</RotationZ>
+        <RotationY>175.813965</RotationY>
+        <RotationX>-8.372093</RotationX>
       </Expression>
     </Nodes>
     <Edges>
