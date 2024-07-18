@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.7.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:p1="clr-namespace:;assembly=Extensions"
+                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>SpeedPairsArray</Name>
+      </Expression>
+      <Expression xsi:type="PropertyMapping">
+        <PropertyMappings>
+          <Property Name="SpeedPairsArray" />
+        </PropertyMappings>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Timer">
+          <rx:DueTime>PT0S</rx:DueTime>
+          <rx:Period>PT1S</rx:Period>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Unit" />
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="maxInARow" />
+        <Property Name="pRightManual" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="p1:TrialManager_SD_2024">
+          <p1:SpeedPairsArray>
+            <p1:ArrayOfFloat>
+              <p1:float>512</p1:float>
+              <p1:float>64</p1:float>
+              <p1:float>512</p1:float>
+              <p1:float>64</p1:float>
+            </p1:ArrayOfFloat>
+            <p1:ArrayOfFloat>
+              <p1:float>16</p1:float>
+              <p1:float>16</p1:float>
+              <p1:float>64</p1:float>
+              <p1:float>64</p1:float>
+            </p1:ArrayOfFloat>
+            <p1:ArrayOfFloat>
+              <p1:float>25</p1:float>
+              <p1:float>25</p1:float>
+              <p1:float>25</p1:float>
+              <p1:float>25</p1:float>
+            </p1:ArrayOfFloat>
+          </p1:SpeedPairsArray>
+          <p1:itrial>0</p1:itrial>
+          <p1:rightInARow>
+            <p1:int>1</p1:int>
+            <p1:int>-1</p1:int>
+            <p1:int>-1</p1:int>
+            <p1:int>-1</p1:int>
+            <p1:int>1</p1:int>
+          </p1:rightInARow>
+          <p1:maxInARow>5</p1:maxInARow>
+          <p1:pRightManual>0.5</p1:pRightManual>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item1</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item2</Selector>
+      </Expression>
+      <Expression xsi:type="io:CsvReader">
+        <io:FileName>newMetadataTet.csv</io:FileName>
+        <io:ScanPattern>%f,%f,%f</io:ScanPattern>
+        <io:SkipRows>1</io:SkipRows>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item1</Selector>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:ToArray" />
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item2</Selector>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:ToArray" />
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item3</Selector>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:ToArray" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Merge" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:ToArray" />
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>SpeedPairsArray</Name>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="5" Label="Source2" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="5" Label="Source1" />
+      <Edge From="4" To="5" Label="Source3" />
+      <Edge From="5" To="6" Label="Source1" />
+      <Edge From="5" To="7" Label="Source1" />
+      <Edge From="8" To="9" Label="Source1" />
+      <Edge From="8" To="11" Label="Source1" />
+      <Edge From="8" To="13" Label="Source1" />
+      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="10" To="15" Label="Source1" />
+      <Edge From="11" To="12" Label="Source1" />
+      <Edge From="12" To="15" Label="Source2" />
+      <Edge From="13" To="14" Label="Source1" />
+      <Edge From="14" To="15" Label="Source3" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="16" To="17" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>

@@ -9,8 +9,8 @@ serverDir='Z:\ibn-vision\DATA\SUBJECTS\';
 timeStamp2Use = 'ArduinoTime'; % 'ArduinoTime', 'BonsaiTime', [in any case should be ms] ?{or 'SyncPulse'}
 
 %% Session details
-Subject = 'M24019';
-Session = '20240430';
+Subject = 'M24020';
+Session = '20240503';
 
 sessionDir = fullfile(serverDir, Subject, 'Training', Session);
 
