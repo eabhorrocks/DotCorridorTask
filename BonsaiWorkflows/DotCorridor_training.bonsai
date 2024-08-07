@@ -9194,7 +9194,7 @@ Item5 as RightVel)</scr:Expression>
               <Name>Source1</Name>
             </Expression>
             <Expression xsi:type="io:CsvReader">
-              <io:FileName>newMetadataTet.csv</io:FileName>
+              <io:FileName>DotCorridorStimulusFile.csv</io:FileName>
               <io:ScanPattern>%f,%f,%f</io:ScanPattern>
               <io:SkipRows>1</io:SkipRows>
             </Expression>
