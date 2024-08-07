@@ -28,7 +28,7 @@ public class TrackPerformance_SD_2024
 
             Console.WriteLine("index: " + speedPairIndex);
             
-
+            
             TrialCountsList[speedPairIndex] = TrialCountsList[speedPairIndex]+1;
             //Console.WriteLine(TrialCountsArray[speedPairIndex]);
 
