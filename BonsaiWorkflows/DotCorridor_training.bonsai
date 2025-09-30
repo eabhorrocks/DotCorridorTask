@@ -13,6 +13,7 @@
                  xmlns:p2="clr-namespace:Bonsai.Numerics.Distributions;assembly=Bonsai.Numerics"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:viz="clr-namespace:Bonsai.Design.Visualizers;assembly=Bonsai.Design.Visualizers"
+                 xmlns:ipy="clr-namespace:Bonsai.Scripting.IronPython;assembly=Bonsai.Scripting.IronPython"
                  xmlns:num="clr-namespace:Bonsai.Numerics;assembly=Bonsai.Numerics"
                  xmlns:ffmpeg="clr-namespace:Bonsai.FFmpeg;assembly=Bonsai.FFmpeg"
                  xmlns="https://bonsai-rx.org/2018/workflow">
@@ -9592,7 +9593,7 @@ Item5 as RightVel)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>SDTraining</Value>
+                <Value>DotMotion_SpeedTuning</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -9600,15 +9601,26 @@ Item5 as RightVel)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M24045</Value>
+                <Value>M25071</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>DateDir</Name>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="SavingDirBase" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>C:\</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Zip" />
             </Expression>
             <Expression xsi:type="Format">
-              <Format>{0}_{1}</Format>
-              <Selector>Item2,Item1</Selector>
+              <Format>{2}\Data\{0}\{3}\{0}_{1}</Format>
+              <Selector>Item1,Item2,Item3,Item4</Selector>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>FilenamePrefix</Name>
@@ -9651,24 +9663,38 @@ Item5 as RightVel)</scr:Expression>
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>MetadataName</Name>
             </Expression>
+            <Expression xsi:type="ipy:PythonSource">
+              <ipy:Script>from System import DateTime,String
+
+@returns(String)
+def generate(): 
+  yield (DateTime.Now).ToString("yyyyMMdd")</ipy:Script>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>DateDir</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="4" Label="Source1" />
+            <Edge From="1" To="7" Label="Source2" />
             <Edge From="2" To="3" Label="Source1" />
-            <Edge From="3" To="4" Label="Source2" />
-            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="3" To="7" Label="Source1" />
+            <Edge From="4" To="7" Label="Source4" />
             <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source3" />
             <Edge From="7" To="8" Label="Source1" />
-            <Edge From="7" To="10" Label="Source1" />
-            <Edge From="7" To="12" Label="Source1" />
-            <Edge From="7" To="14" Label="Source1" />
-            <Edge From="7" To="16" Label="Source1" />
             <Edge From="8" To="9" Label="Source1" />
             <Edge From="10" To="11" Label="Source1" />
-            <Edge From="12" To="13" Label="Source1" />
-            <Edge From="14" To="15" Label="Source1" />
-            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="10" To="13" Label="Source1" />
+            <Edge From="10" To="15" Label="Source1" />
+            <Edge From="10" To="17" Label="Source1" />
+            <Edge From="10" To="19" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -11187,7 +11213,7 @@ Item5 as RightVel)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>4.5</Value>
+                <Value>5</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
@@ -11198,7 +11224,7 @@ Item5 as RightVel)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>4.5</Value>
+                <Value>10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
