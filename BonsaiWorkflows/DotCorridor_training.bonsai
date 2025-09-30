@@ -944,8 +944,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
         <Name>Source1</Name>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
-        <Property Name="StimulusID" />
-        <Property Name="MouseID" />
+        <Property Name="StimulusID" Category="Logging" />
+        <Property Name="MouseID" Category="Logging" />
+        <Property Name="SavingDirBase" Category="Logging" />
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="maxInARow" Category="Bias Settings" />
@@ -9593,7 +9594,7 @@ Item5 as RightVel)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>DotMotion_SpeedTuning</Value>
+                <Value>SDTraining</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -9712,7 +9713,7 @@ def generate():
               <Name>Source1</Name>
             </Expression>
             <Expression xsi:type="io:CsvReader">
-              <io:FileName>DotCorridorStimulusFile_M24045.csv</io:FileName>
+              <io:FileName>DotCorridorStimulusFile_stage1.csv</io:FileName>
               <io:ScanPattern>%f,%f,%f</io:ScanPattern>
               <io:SkipRows>1</io:SkipRows>
             </Expression>
@@ -11416,7 +11417,7 @@ def generate():
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="io:CreateSerialPort">
                 <io:Name>ArduinoSerial</io:Name>
-                <io:PortName>COM5</io:PortName>
+                <io:PortName>COM4</io:PortName>
                 <io:BaudRate>1000000</io:BaudRate>
                 <io:Encoding>us-ascii</io:Encoding>
                 <io:Parity>None</io:Parity>
