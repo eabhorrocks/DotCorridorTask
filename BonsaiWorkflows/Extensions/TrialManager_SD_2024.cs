@@ -76,8 +76,8 @@ public class TrialManager_SD_2024
             float biasrnd = (float)rng.NextDouble(); // random number for left / right faster
 
             // first check if maxInARow trials have just been shown (consecutively all left or all right)
-            if (rightInARow.All(x => x == 1)) {biasrnd = 1;} // if list is all rights, next trial must be left
-            if (rightInARow.All(x => x == -1)){biasrnd = 0;} // if list is all lefts, next trial must be right
+            if (rightInARow.All(x => x == 1)) {biasrnd = 1.1f;} // if list is all rights, next trial must be left
+            if (rightInARow.All(x => x == -1)){biasrnd = -0.1f;} // if list is all lefts, next trial must be right
             
             if (biasrnd <= pRight) // compare to pre-calculated pRight value (probability of right faster)
             {
@@ -93,6 +93,8 @@ public class TrialManager_SD_2024
             // add right faster, remove first elements from list if needed
             rightInARow.Add(rightFaster);
             while (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
+            
+            //for (int i=0; i<rightInARow.Count; i++) {Console.WriteLine(rightInARow[i]);}
 
             var output = Tuple.Create(speeds2show,rightFaster,speedPairIndex);
             return output;
