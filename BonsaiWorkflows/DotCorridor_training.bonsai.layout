@@ -981,12 +981,12 @@
       <DialogSettings>
         <Visible>false</Visible>
         <Location>
-          <X>0</X>
-          <Y>0</Y>
+          <X>208</X>
+          <Y>208</Y>
         </Location>
         <Size>
-          <Width>0</Width>
-          <Height>0</Height>
+          <Width>416</Width>
+          <Height>279</Height>
         </Size>
         <WindowState>Normal</WindowState>
       </DialogSettings>
@@ -1147,14 +1147,30 @@
         <WindowState>Normal</WindowState>
       </DialogSettings>
       <DialogSettings>
-        <Visible>false</Visible>
+        <Visible>true</Visible>
         <Location>
-          <X>127</X>
-          <Y>846</Y>
+          <X>440</X>
+          <Y>813</Y>
         </Location>
         <Size>
           <Width>336</Width>
           <Height>65</Height>
+        </Size>
+        <WindowState>Normal</WindowState>
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
+      </DialogSettings>
+      <DialogSettings>
+        <Visible>false</Visible>
+        <Location>
+          <X>0</X>
+          <Y>0</Y>
+        </Location>
+        <Size>
+          <Width>0</Width>
+          <Height>0</Height>
         </Size>
         <WindowState>Normal</WindowState>
       </DialogSettings>
@@ -1487,8 +1503,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>545</X>
-          <Y>96</Y>
+          <X>732</X>
+          <Y>496</Y>
         </Location>
         <Size>
           <Width>310</Width>
@@ -1566,12 +1582,12 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>556</X>
-          <Y>415</Y>
+          <X>432</X>
+          <Y>403</Y>
         </Location>
         <Size>
-          <Width>398</Width>
-          <Height>559</Height>
+          <Width>336</Width>
+          <Height>279</Height>
         </Size>
         <WindowState>Normal</WindowState>
         <VisualizerTypeName>Bonsai.Design.Visualizers.TableLayoutPanelVisualizer</VisualizerTypeName>
@@ -1590,8 +1606,8 @@
               <VisualizerSettings>
                 <TimeSeriesVisualizer>
                   <Capacity>640</Capacity>
-                  <Min>-1</Min>
-                  <Max>1</Max>
+                  <Min>0</Min>
+                  <Max>1.2</Max>
                   <AutoScale>true</AutoScale>
                 </TimeSeriesVisualizer>
               </VisualizerSettings>
@@ -1650,12 +1666,12 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>193</X>
-          <Y>100</Y>
+          <X>725</X>
+          <Y>147</Y>
         </Location>
         <Size>
-          <Width>359</Width>
-          <Height>624</Height>
+          <Width>336</Width>
+          <Height>393</Height>
         </Size>
         <WindowState>Normal</WindowState>
         <VisualizerTypeName>Bonsai.Design.Visualizers.TableLayoutPanelVisualizer</VisualizerTypeName>
@@ -1681,11 +1697,11 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>806</X>
-          <Y>867</Y>
+          <X>446</X>
+          <Y>709</Y>
         </Location>
         <Size>
-          <Width>336</Width>
+          <Width>388</Width>
           <Height>82</Height>
         </Size>
         <WindowState>Normal</WindowState>
@@ -1709,8 +1725,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>189</X>
-          <Y>717</Y>
+          <X>24</X>
+          <Y>648</Y>
         </Location>
         <Size>
           <Width>377</Width>
@@ -1726,6 +1742,18 @@
             <AutoScale>false</AutoScale>
           </BarGraphVisualizer>
         </VisualizerSettings>
+      </DialogSettings>
+      <DialogSettings>
+        <Visible>false</Visible>
+        <Location>
+          <X>0</X>
+          <Y>0</Y>
+        </Location>
+        <Size>
+          <Width>0</Width>
+          <Height>0</Height>
+        </Size>
+        <WindowState>Normal</WindowState>
       </DialogSettings>
       <DialogSettings>
         <Visible>false</Visible>
