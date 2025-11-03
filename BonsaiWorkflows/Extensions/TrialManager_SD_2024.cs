@@ -101,7 +101,7 @@ public class TrialManager_SD_2024
                     biasSum += biasList[i] * weight;
                     totalNorm += 1f * weight;
 
-                    Console.WriteLine("BiasList " + biasList[i] + " Weight " + weight);
+                    //Console.WriteLine("BiasList " + biasList[i] + " Weight " + weight);
                 }
                 float bias = biasSum / totalNorm; // weighted average of recent trial results
 
