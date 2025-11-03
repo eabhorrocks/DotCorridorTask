@@ -26,7 +26,7 @@ public class TrackPerformance_SD_2024
             List<double> pCorrectList = new List<double>();
             List<double> pEngagedList = new List<double>();
 
-            Console.WriteLine("index: " + speedPairIndex);
+            //Console.WriteLine("index: " + speedPairIndex);
             
             
             TrialCountsList[speedPairIndex] = TrialCountsList[speedPairIndex]+1;
@@ -35,7 +35,7 @@ public class TrackPerformance_SD_2024
             if (trialResult==1 | trialResult==-1)
             {
                 TrialCorrectList[speedPairIndex]=TrialCorrectList[speedPairIndex]+1;
-                Console.WriteLine(TrialCorrectList[speedPairIndex]);
+                //Console.WriteLine(TrialCorrectList[speedPairIndex]);
             }
 
             if (trialResult!=3)
@@ -44,7 +44,7 @@ public class TrackPerformance_SD_2024
             }
 
             
-            Console.WriteLine("pcorr");
+            //Console.WriteLine("pcorr");
             for (int i=0; i<nSpeedPairs; i++)
             {
                 double nCorrect = (double)TrialCorrectList[i];
@@ -55,7 +55,7 @@ public class TrackPerformance_SD_2024
 
                 pCorrectList.Add(pCorrect);
                 pEngagedList.Add(pEngaged);
-                Console.WriteLine("ncorr: " + nCorrect + " nCount: " + nCount + " pCorr" + pCorrect);
+                //Console.WriteLine("ncorr: " + nCorrect + " nCount: " + nCount + " pCorr" + pCorrect);
 
             }
 

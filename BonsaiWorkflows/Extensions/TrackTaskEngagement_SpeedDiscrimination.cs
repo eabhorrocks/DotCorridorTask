@@ -10,13 +10,16 @@ using System.Reactive.Linq;
 [WorkflowElementCategory(ElementCategory.Transform)]
 public class TrackTaskEngagement_SpeedDiscrimination
 {
-    public List<int> trialResponses { get; set;} // list of trial responses
+    public List<int> trialResponses { get; set; } // list of trial responses
+    public List<int> trialResults { get; set; }
     public int maxListLength {get; set; } // 
     public double pEngagedThreshold {get; set; }
-    public IObservable<Tuple<bool, double>> Process(IObservable<int> source)
+    public IObservable<Tuple<bool, double, List<int>>> Process(IObservable<int> source)
     {
-        return source.Select(value => 
+        return source.Select(value =>
         {
+            trialResults.Insert(0, (int)value);
+            
             trialResponses.Add((int)value);
             while (trialResponses.Count > maxListLength)
             { 
@@ -38,7 +41,7 @@ public class TrackTaskEngagement_SpeedDiscrimination
                 trialResponses = new List<int>(Enumerable.Repeat(0, maxListLength));
             }
 
-            var output = Tuple.Create(engagedbool, pEngaged);
+            var output = Tuple.Create(engagedbool, pEngaged, trialResults);
 
             return output;
         });

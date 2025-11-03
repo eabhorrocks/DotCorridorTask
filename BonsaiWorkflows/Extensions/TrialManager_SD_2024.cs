@@ -19,7 +19,10 @@ public class TrialManager_SD_2024
     public int itrial {get; set; }
 
     // left/right properties
-    public List<int> rightInARow {get; set; } //
+    public List<int> rightInARow { get; set; } //
+    
+    public List<int> trialResultsList {get; set; } //
+
     public int maxInARow {get; set; }
     //public bool autoBias {get; set; }
     //public float biasScaling {get; set; }
@@ -76,9 +79,25 @@ public class TrialManager_SD_2024
             float biasrnd = (float)rng.NextDouble(); // random number for left / right faster
 
             // first check if maxInARow trials have just been shown (consecutively all left or all right)
-            if (rightInARow.All(x => x == 1)) {biasrnd = 1.1f;} // if list is all rights, next trial must be left
-            if (rightInARow.All(x => x == -1)){biasrnd = -0.1f;} // if list is all lefts, next trial must be right
+            //if (rightInARow.All(x => x == 1)) {biasrnd = 1.1f;} // if list is all rights, next trial must be left
+            //if (rightInARow.All(x => x == -1)) { biasrnd = -0.1f; } // if list is all lefts, next trial must be right
+
+
+            // first check if maxInARow trials have just been shown (results consecutively all left or all right)
             
+            while (trialResultsList.Count > maxInARow) { trialResultsList.RemoveAt(trialResultsList.Count - 1); }
+            
+            if (trialResultsList.All(x => x == 1))
+            {
+                biasrnd = 1.1f;
+                Console.WriteLine("next is left");
+            } // if list is all rights, next trial must be left
+            if (trialResultsList.All(x => x == -1))
+            {
+                biasrnd = -0.1f;
+                Console.WriteLine("next is right");
+            } // if list is all lefts, next trial must be right
+
             if (biasrnd <= pRight) // compare to pre-calculated pRight value (probability of right faster)
             {
             rightFaster = 1; 
@@ -93,6 +112,7 @@ public class TrialManager_SD_2024
             // add right faster, remove first elements from list if needed
             rightInARow.Add(rightFaster);
             while (rightInARow.Count > maxInARow) { rightInARow.RemoveAt(0); }
+            
             
             //for (int i=0; i<rightInARow.Count; i++) {Console.WriteLine(rightInARow[i]);}
 
