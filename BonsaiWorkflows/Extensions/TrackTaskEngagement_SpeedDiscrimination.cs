@@ -11,14 +11,15 @@ using System.Reactive.Linq;
 public class TrackTaskEngagement_SpeedDiscrimination
 {
     public List<int> trialResponses { get; set; } // list of trial responses
-    public List<int> trialResults { get; set; }
+    public List<int> trialResultsList { get; set; }
     public int maxListLength {get; set; } // 
     public double pEngagedThreshold {get; set; }
     public IObservable<Tuple<bool, double, List<int>>> Process(IObservable<int> source)
     {
         return source.Select(value =>
         {
-            trialResults.Insert(0, (int)value);
+            trialResultsList.Insert(0, (int)value);
+            
             
             trialResponses.Add((int)value);
             while (trialResponses.Count > maxListLength)
@@ -41,7 +42,7 @@ public class TrackTaskEngagement_SpeedDiscrimination
                 trialResponses = new List<int>(Enumerable.Repeat(0, maxListLength));
             }
 
-            var output = Tuple.Create(engagedbool, pEngaged, trialResults);
+            var output = Tuple.Create(engagedbool, pEngaged, trialResultsList);
 
             return output;
         });
