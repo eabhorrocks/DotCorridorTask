@@ -9,7 +9,7 @@ function trial = genTrialStruct(events_tbl, licks_tbl, trialParams_tbl, wheel_tb
 
 %% determine trial index of events
 
-nCompletedTrials =  numel(find(events_tbl.Event=="dotsMOVE"));
+nCompletedTrials =  numel(find(events_tbl.Event=="respCLOSED"));
 nAbortedTrials = numel(find(events_tbl.Event=="stimON"))-nCompletedTrials; % this may be fixed in new Bonsai workflows
 
 % these events ALWAYS happen if a trial is not aborted.
@@ -18,6 +18,7 @@ respOpenIdx=find(events_tbl.Event=="respOPEN");
 respCloseIdx = find(events_tbl.Event=="respCLOSED");
 
 for itrial = 1:nCompletedTrials
+    try
     % indexes
     events.trial(itrial).moveidx = dotsMoveIdx(itrial);
     events.trial(itrial).sonidx = find(events_tbl.Event(1:dotsMoveIdx(itrial))=="stimON",1,'last'); % most recent "stimON"
@@ -32,6 +33,9 @@ for itrial = 1:nCompletedTrials
     events.trial(itrial).sofftimes = events_tbl.(timeStamp2Use)(events.trial(itrial).soffidx);
     events.trial(itrial).respOpentimes = events_tbl.(timeStamp2Use)(events.trial(itrial).respOpenidx);
     events.trial(itrial).respClosetimes = events_tbl.(timeStamp2Use)(events.trial(itrial).respCloseidx);
+    catch
+        debug=1;
+    end
 
 end
 
