@@ -37,8 +37,12 @@ for isession = 1:numEvents
     session(isession).eventFile = eventFiles(isession).name;
     session(isession).lickFile = lickFiles(isession).name;
     session(isession).paramFile = paramFiles(isession).name;
-    session(isession).wheelFile = wheelFiles(isession).name; 
-    session(isession).videoFile = videoFiles(isession).name; 
+    session(isession).wheelFile = wheelFiles(isession).name;
+    if numVideoFiles > 0
+        session(isession).videoFile = videoFiles(isession).name;
+    else
+        session(isession).videoFile = '';
+    end
 end
 
 %% loop through each 'session' and import csv files as tables
@@ -48,5 +52,9 @@ for isession = 1:numel(session)
     session(isession).lick_tbl = readtable(fullfile(folder, session(isession).lickFile));
     session(isession).trialParams_tbl = readtable(fullfile(folder, session(isession).paramFile));
     session(isession).wheel_tbl = readtable(fullfile(folder, session(isession).wheelFile));
-    session(isession).video_tbl = readtable(fullfile(folder, session(isession).videoFile));
+    if ~isempty(session(isession).videoFile)
+        session(isession).video_tbl = readtable(fullfile(folder, session(isession).videoFile));
+    else
+        session(isession).video_tbl = table();
+    end
 end

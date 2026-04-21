@@ -10,6 +10,12 @@ function trial = genTrialStruct(events_tbl, licks_tbl, trialParams_tbl, wheel_tb
 %% determine trial index of events
 
 nCompletedTrials =  numel(find(events_tbl.Event=="respCLOSED"));
+
+if nCompletedTrials == 0
+    trial = [];
+    return;
+end
+
 nAbortedTrials = numel(find(events_tbl.Event=="stimON"))-nCompletedTrials; % this may be fixed in new Bonsai workflows
 
 % these events ALWAYS happen if a trial is not aborted.
@@ -70,6 +76,34 @@ tags = {'respSize'};
 
 % check trial params and processed events have equal number of trials
 if numel(events.trial)~=height(trialParams_tbl)
+    fprintf('events.trial: %d trials, trialParams_tbl: %d trials\n', numel(events.trial), height(trialParams_tbl));
+    
+    % Stream Sync Debugging: Compare timestamps to find where the streams diverge
+    t_events = [events.trial.sontimes]; t_events = t_events(:);
+    t_params = trialParams_tbl.(timeStamp2Use); t_params = t_params(:);
+    minT = min(numel(t_events), numel(t_params));
+    
+    if minT > 0
+        t_diff = t_events(1:minT) - t_params(1:minT);
+        fprintf('--- Sync Debug Info ---\n');
+        fprintf('Mean offset (Events-Params): %.2f ms (std: %.2f)\n', mean(t_diff), std(t_diff));
+        
+        % Detect discrete jumps in the timing difference (e.g., dropped rows)
+        jumpThreshold = 500; % ms
+        jumps = find(abs(diff(t_diff)) > jumpThreshold);
+        if ~isempty(jumps)
+            for ij = 1:min(3, numel(jumps)) % Show first few jumps
+                idx = jumps(ij);
+                fprintf('Jump @ Trial %d: diff changed by %.2f ms\n', idx+1, t_diff(idx+1) - t_diff(idx));
+            end
+        else
+            fprintf('No sudden jumps >%dms detected in the first %d trials.\n', jumpThreshold, minT);
+            [~, maxIdx] = max(abs(t_diff - mean(t_diff)));
+            fprintf('Max deviation at trial %d (%.2f ms)\n', maxIdx, t_diff(maxIdx));
+        end
+        fprintf('-----------------------\n');
+    end
+    
     error('different number of trials detected from event markers and trial params table')
 end
 
