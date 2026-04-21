@@ -1,9 +1,9 @@
-function wheel_tbl = processWheelTable_SD(wheel_tbl, wheelDiameter, timestamp2use)
+function wheel_tbl = processWheelTable_SD(wheel_tbl, wheelDiameter, ticksPerRev, timestamp2use)
 
 % unwrap wheel and convert to cm
 halfMax = max(wheel_tbl.Wheel)/2;
 wheel_tbl.Wheel = unwrap(wheel_tbl.Wheel, halfMax);
-wheel_tbl.Distance = wheel2unit(wheel_tbl.Wheel, 1024, wheelDiameter);%.*-1; % pos, ticks/rev, wheel diam
+wheel_tbl.Distance = wheel2unit(wheel_tbl.Wheel, ticksPerRev, wheelDiameter);%.*-1; % pos, ticks/rev, wheel diam
 
 % get speed at each timepoint
 temp_speed = diff(wheel_tbl.Distance)./diff(wheel_tbl.(timestamp2use));

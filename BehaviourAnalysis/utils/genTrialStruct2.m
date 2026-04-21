@@ -18,6 +18,7 @@ respOpenIdx=find(events_tbl.Event=="respOPEN");
 respCloseIdx = find(events_tbl.Event=="respCLOSED");
 
 for itrial = 1:nCompletedTrials
+    try
     % indexes
     events.trial(itrial).moveidx = dotsMoveIdx(itrial);
     events.trial(itrial).sonidx = find(events_tbl.Event(1:dotsMoveIdx(itrial))=="stimON",1,'last'); % most recent "stimON"
@@ -32,6 +33,9 @@ for itrial = 1:nCompletedTrials
     events.trial(itrial).sofftimes = events_tbl.(timeStamp2Use)(events.trial(itrial).soffidx);
     events.trial(itrial).respOpentimes = events_tbl.(timeStamp2Use)(events.trial(itrial).respOpenidx);
     events.trial(itrial).respClosetimes = events_tbl.(timeStamp2Use)(events.trial(itrial).respCloseidx);
+    catch
+        debug=1;
+    end
 
 end
 
@@ -98,14 +102,9 @@ for itrial = 1:height(trialParams_tbl) % completed trials...
     trial(itrial).rewardtime = nan;
 
     % get trial response window properties from event intervals
-    idx_respSize = events.trial(itrial).sonidx>events.respWin.sizeIntervals(:,1) & ...
-                   events.trial(itrial).sonidx<events.respWin.sizeIntervals(:,2);
-    if any(idx_respSize)
-        trial(itrial).respSizeStr = events.respWin.sizeTags(idx_respSize);
-        trial(itrial).respSize = str2double(extract(trial(itrial).respSizeStr, digitsPattern))*1000; % extract number and convert to ms
-    else
-        trial(itrial).respSize = NaN;
-    end
+    trial(itrial).respSize = events.respWin.sizeTags(events.trial(itrial).sonidx>...
+        events.respWin.sizeIntervals(:,1) & events.trial(itrial).sonidx<events.respWin.sizeIntervals(:,2));
+    trial(itrial).respSize = str2double(extract(trial(itrial).respSize, digitsPattern))*1000; % extract number and convert to ms
 
     trial(itrial).respWinOpen =nan;
     trial(itrial).respWinClosed =nan;
@@ -132,12 +131,9 @@ end
 for itrial = 1:numel(trial)
     startTime = trial(itrial).onTime-1000;
     stopTime = startTime+trial(itrial).respWinOpen+trial(itrial).respSize+2000;
-try
+
     trial(itrial).licksL = licks.lickTimeL(licks.lickTimeL < stopTime & licks.lickTimeL > startTime)-trial(itrial).onTime;
     trial(itrial).licksR = licks.lickTimeR(licks.lickTimeR < stopTime & licks.lickTimeR > startTime)-trial(itrial).onTime;
-catch
-    debug=1;
-end
 
     trial(itrial).firstLick=nan;
     if ~isempty([trial(itrial).licksL]) && isempty([trial(itrial).licksR])
@@ -147,7 +143,7 @@ end
     elseif ~isempty([trial(itrial).licksL]) && ~isempty([trial(itrial).licksR])
         if min([trial(itrial).licksL])<min([trial(itrial).licksR])
                     trial(itrial).firstLick = -1;
-        elseif min([trial(itrial).licksR])<min([trial(itrial).licksL])
+        elseif min([trial(itrial).licksR])>min([trial(itrial).licksL])
                     trial(itrial).firstLick = 1;
         end
     end
@@ -155,11 +151,7 @@ end
 
     %     wheel
     [~, wheelStartIdx] = min(abs(startTime-wheel_tbl.(timeStamp2Use)));
-    try
     [~, wheelStopIdx] = min(abs(stopTime-wheel_tbl.(timeStamp2Use)));
-    catch
-        debug=1;
-    end
     trial(itrial).wheel = wheel_tbl.Speed(wheelStartIdx:wheelStopIdx);
     trial(itrial).wheelTime = wheel_tbl.(timeStamp2Use)(wheelStartIdx:wheelStopIdx)-trial(itrial).onTime;
 
@@ -216,20 +208,22 @@ end
 %% 
 for itrial = 1:numel(trial)
     alltriallicks = sort([trial(itrial).licksL; trial(itrial).licksR]);
-    % default is not engaged
-    trial(itrial).engaged = 0;
-    
-    % if passive or manual reward given
-    if trial(itrial).type==1 || trial(itrial).manualReward==1
+    % if passive trials
+    if trial(itrial).type==1 || trial(itrial).manualReward==1 % passsive trials
         if any(alltriallicks > trial(itrial).respWinOpen &...
                 alltriallicks < trial(itrial).respWinClosed)
-            trial(itrial).engaged = 1; 
+            trial(itrial).engaged = 1; % specific definition of engaged for passive trials
+        else
+            trial(itrial).engaged = 0;
         end
-    else % active trials
-        if trial(itrial).response ~= 0 || ...
-           any(alltriallicks > trial(itrial).respWinOpen & ...
-               alltriallicks < trial(itrial).respWinClosed)
+    else % not passive trials
+        if (trial(itrial).response ~=0 && trial(itrial).manualReward==0)
             trial(itrial).engaged = 1;
+        elseif (any(alltriallicks > trial(itrial).respWinOpen &...
+                alltriallicks < trial(itrial).respWinClosed)) && (trial(itrial).manualReward==0)
+            trial(itrial).engaged = 1;
+        else
+            trial(itrial).engaged = 0;
         end
     end
 end

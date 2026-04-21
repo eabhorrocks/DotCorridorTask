@@ -2,12 +2,9 @@ function session = importSDSessionFiles(folder)
 % This function searches the input folder for .csv files produced by Bonsai
 % and loads them as matlab tables within a session(nSession) struct
 
-%% TO DO: 
-% - check timestamps of matching files make sense! i.e. within x secs?
-% - optionally emit 'video'? or give warnings? or just be verbose about
-% everything?
-
-
+if ~exist(folder, 'dir')
+    error('Directory does not exist: %s', folder);
+end
 
 %% get filenames of csv files
 eventFiles = dir(fullfile(folder, '*Events*.csv'));
@@ -24,8 +21,12 @@ numTrialParams = numel(paramFiles);
 numWheel = numel(wheelFiles);
 numVideoFiles = numel(videoFiles);
 
-if numel(unique([numEvents, numLicks, numTrialParams, numWheel, numVideoFiles])) ~= 1
-    error('Unequal number of .csv files found in %s found, check directory', folder);
+if numel(unique([numEvents, numLicks, numTrialParams, numWheel])) ~= 1
+    error('Unequal number of core .csv files found in %s, check directory', folder);
+end
+
+if numVideoFiles > 0 && numVideoFiles ~= numEvents
+    warning('Number of video files (%d) does not match number of event files (%d)', numVideoFiles, numEvents);
 end
 
 %% Match up files
